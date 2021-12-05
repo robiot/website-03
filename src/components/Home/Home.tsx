@@ -1,4 +1,8 @@
-import { GitHub, Twitter, YouTube, Mail } from "@material-ui/icons";
+import GitHubIcon from '@mui/icons-material/GitHub';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import MailIcon from '@mui/icons-material/Mail';
+
 import {
     BackgroundImage,
     LandingIconsWrapper,
@@ -22,25 +26,25 @@ const Home = () => {
                             href="https://github.com/robiot"
                             target="_blank"
                         >
-                            <GitHub width="1px" />
+                            <GitHubIcon width="1px" />
                         </LandingIcon>
                         <LandingIcon
                             href="https://twitter.com/notrobiot"
                             target="_blank"
                         >
-                            <Twitter width="1px" />
+                            <TwitterIcon width="1px" />
                         </LandingIcon>
                         <LandingIcon
                             href="https://www.youtube.com/c/robiot"
                             target="_blank"
                         >
-                            <YouTube width="1px" />
+                            <YouTubeIcon width="1px" />
                         </LandingIcon>
 
                         <LandingIcon
                             href="mailto:me@robiot.dev"
                         >
-                            <Mail width="1px" />
+                            <MailIcon width="1px" />
                         </LandingIcon>
                     </LandingIconsWrapper>
                 </LandingWrapper>

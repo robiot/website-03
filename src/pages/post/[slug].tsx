@@ -1,4 +1,5 @@
-import { DateRange, Person } from "@material-ui/icons";
+import DateRangeIcon from '@mui/icons-material/DateRange';
+import PersonIcon from '@mui/icons-material/Person';
 import type { NextPage } from "next";
 import styled from "styled-components";
 import { Container } from "../../components/Container";
@@ -37,12 +38,12 @@ const Post: NextPage = ({ post }: any) => {
                 <Wrapper>
                     <PostInfo>
                         <PostInfoItem>
-                            <DateRange fontSize="small" width="1px" />
+                            <DateRangeIcon fontSize="small" width="1px" />
                             {StringToDate(post.date)}
                         </PostInfoItem>
 
                         <PostInfoItem>
-                            <Person fontSize="small" width="1px" />
+                            <PersonIcon fontSize="small" width="1px" />
                             by {post.author}
                         </PostInfoItem>
                     </PostInfo>

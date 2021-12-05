@@ -2,8 +2,12 @@ import styled from "styled-components";
 import { Container } from "./Container";
 import Link from "next/link";
 import Router from "next/router";
-import { Menu } from "@material-ui/icons";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
+
+import MenuIcon from "@mui/icons-material/Menu";
+import { themeCtx } from "../pages/_app";
 
 const NavItemsList = [
     {
@@ -20,6 +24,12 @@ const NavItemsList = [
     },
 ];
 
+const breakpoint = "930px";
+
+const NavContainer = styled(Container)`
+    flex-grow: 0;
+`;
+
 const Holder = styled.div`
     position: sticky;
     top: 0;
@@ -28,6 +38,7 @@ const Holder = styled.div`
     height: 60px;
     display: flex;
     box-shadow: 0 8px 10px -6px ${({ theme }) => theme.palette.primary[900]};
+    align-items: center;
 `;
 
 const Wrapper = styled.div`
@@ -38,7 +49,7 @@ const Wrapper = styled.div`
 `;
 
 const NavItems = styled(Wrapper)`
-    @media (max-width: 550px) {
+    @media (max-width: ${breakpoint}) {
         display: none;
     }
 `;
@@ -64,10 +75,10 @@ const HomeImage = styled.img`
     cursor: pointer;
 `;
 
-const MenuIcon = styled.div`
+const MenuIconWrapper = styled.div`
     margin-top: 5px;
     cursor: pointer;
-    @media (min-width: 550px) {
+    @media (min-width: ${breakpoint}) {
         display: none;
     }
 `;
@@ -84,19 +95,47 @@ const Dropdown = styled.div`
     box-shadow: 0 8px 10px -6px ${({ theme }) => theme.palette.primary[900]};
     display: flex;
     flex-direction: column;
-    @media (min-width: 550px) {
+    @media (min-width: ${breakpoint}) {
         display: none;
+    }
+`;
+
+const ThemeSwitcher = styled.div`
+    position: absolute;
+    right: 0;
+    margin-top: 0.5rem;
+    margin-right: 2rem;
+    cursor: pointer;
+    @media (max-width: ${breakpoint}) {
+        display: none;
+    }
+    &:hover {
+        color: ${({ theme }) => theme.palette.secondary.default};
     }
 `;
 
 const Nav = () => {
     const [dropdown, setDropdown] = useState(false);
+    const [theme, setTheme] = useContext(themeCtx);
+
+    const setThemeEverywhere = () => {
+        const cTheme = theme == "light" ? "dark" : "light";
+        setTheme(cTheme);
+        localStorage.setItem("theme", cTheme);
+    };
 
     return (
         <Holder>
-            <Container>
+            <NavContainer>
                 <Wrapper>
-                    <HomeImage src="/img/robot.png" height="1px" />
+                    <HomeImage
+                        src="/img/robot.png"
+                        height="1px"
+                        onClick={() => {
+                            window.scrollTo(0, 0);
+                            Router.push("/");
+                        }}
+                    />
                     <Wrapper>
                         <NavItems>
                             <NavItem
@@ -117,14 +156,14 @@ const Nav = () => {
                             })}
                         </NavItems>
 
-                        <MenuIcon>
-                            <Menu
-                                width="1px"
+                        <MenuIconWrapper>
+                            <MenuIcon
                                 onClick={() => {
                                     setDropdown(!dropdown);
                                 }}
+                                width="1px"
                             />
-                        </MenuIcon>
+                        </MenuIconWrapper>
 
                         {dropdown && (
                             <Dropdown>
@@ -148,11 +187,41 @@ const Nav = () => {
                                         </Link>
                                     );
                                 })}
+
+                                <NavItem
+                                    onClick={() => {
+                                        setThemeEverywhere();
+                                    }}
+                                >
+                                    {theme == "dark" && (
+                                        <LightModeIcon width="1px" />
+                                    )}
+
+                                    {theme == "light" && (
+                                        <DarkModeIcon width="1px" />
+                                    )}
+                                    <div
+                                        style={{
+                                            marginLeft: "10px",
+                                        }}
+                                    >
+                                        Change theme
+                                    </div>
+                                </NavItem>
                             </Dropdown>
                         )}
                     </Wrapper>
                 </Wrapper>
-            </Container>
+            </NavContainer>
+            <ThemeSwitcher
+                onClick={() => {
+                    setThemeEverywhere();
+                }}
+            >
+                {theme == "dark" && <LightModeIcon width="1px" />}
+
+                {theme == "light" && <DarkModeIcon width="1px" />}
+            </ThemeSwitcher>
         </Holder>
     );
 };

@@ -14,7 +14,7 @@ const Wrapper = styled.div`
 const Footer = () => {
     return (
         <Wrapper>
-            Made with ♥ and Next.js by Robiot
+            Made without ♥ and Next.js by Robiot
         </Wrapper>
     );
 };

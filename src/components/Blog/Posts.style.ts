@@ -48,6 +48,7 @@ export const Description = styled.h4`
 
 export const Tags = styled.div`
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
 `;
 
@@ -63,6 +64,6 @@ export const Tag = styled.div`
 
     &:hover {
         background-color: ${({ theme }) => theme.palette.secondary.default};
-        color: ${({ theme }) => theme.palette.buttonText};
+        color: #fff;
     }
 `;

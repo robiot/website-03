@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Section = styled.div`
     margin-top: 15vw;
+    scroll-margin-top: 10px;
     @media (max-width: 900px) {
         margin-top: 35%;
     }

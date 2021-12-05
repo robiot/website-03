@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { DateRange } from "@material-ui/icons";
+import DateRangeIcon from '@mui/icons-material/DateRange';
+
 import {
     PostsWrapper,
     Description,
@@ -23,7 +24,7 @@ const Posts = ({ posts }) => {
                     }}
                 >
                     <PostDate>
-                        <DateRange fontSize="small" width="1px"/>
+                        <DateRangeIcon fontSize="small" width="1px"/>
                         {StringToDate(post.date)}
                     </PostDate>
 

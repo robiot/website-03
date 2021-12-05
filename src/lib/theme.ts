@@ -27,28 +27,28 @@ export const DarkTheme: DefaultTheme = {
 };
 
 
-// export const DarkTheme: DefaultTheme = {
-//     palette: {
-//         primary: {
-//             100: "#0b0e11",
-//             200: "#151a21",
-//             300: "#242c37", // Searchbar text color
-//             400: "#F1F1F1", // Items hover
-//             500: "#adadad", // "+" hover
-//             600: "#bdbdbd", // Separators and +
-//             700: "#ededed", // Bg (Explore more rooms)
-//             800: "#FFF", // Bg boxes
-//             900: "#F6F6F6" // Main Bg
-//         },
-//         accent: {
-//             default: "#fd4d4d",
-//             disabled: "#f5bfbf",
-//             hover: "#fd6868"
-//         },
-//         secondary: {
-//             default: "#5575e7",
-//             washedOut: "#879eed"
-//         },
-//         buttonText: "#2b2b2b"
-//     }
-// };
+export const LightTheme: DefaultTheme = {
+    palette: {
+        primary: {
+            100: "#0b0e11",
+            200: "#151a21",
+            300: "#242c37",
+            400: "#F1F1F1",
+            500: "#adadad",
+            600: "#bdbdbd",
+            700: "#ededed",
+            800: "#FFF",
+            900: "#F6F6F6"
+        },
+        accent: {
+            default: "#fd4d4d",
+            disabled: "#f5bfbf",
+            hover: "#fd6868"
+        },
+        secondary: {
+            default: "#5575e7",
+            washedOut: "#879eed"
+        },
+        buttonText: "#2b2b2b"
+    }
+};

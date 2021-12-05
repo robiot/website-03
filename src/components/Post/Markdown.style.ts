@@ -30,6 +30,10 @@ export const MarkdownStyles = styled.div`
         }
     }
 
+    & h1, h2, h3, h4, h5 {
+        margin-top: 1.5rem;
+    }
+
     /**
     * okaidia theme for JavaScript, CSS and HTML
     * Loosely based on Monokai textmate theme by http://www.monokai.nl/

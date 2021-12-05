@@ -27,6 +27,3 @@ sanitize enabled, which turned into a default feature in later versions of it. T
 ```js
 remark().use(html, {sanitize: false})
 ```
-
-## Light mode?
-Yes, you will be able to switch between light and dark-mode in a near future.
