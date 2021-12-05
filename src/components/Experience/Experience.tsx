@@ -8,7 +8,7 @@ import {
     Separator,
 } from "./Experience.style";
 import { Container } from "../Container";
-import { Languages, Technologies, Other } from "../../lib/consts";
+import { Languages, Technologies, Other } from "../../lib/experience";
 
 const Experience = () => {
     return (

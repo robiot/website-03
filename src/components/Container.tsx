@@ -10,4 +10,5 @@ export const Container = styled.div`
     @media (max-width: 1000px) {
         width: calc(100% - 4rem);
     }
+    flex-grow: 1; // For footer
 `;

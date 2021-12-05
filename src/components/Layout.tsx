@@ -1,4 +1,5 @@
 import { createGlobalStyle, ThemeProvider } from "styled-components";
+import styled from "styled-components";
 import { DarkTheme } from "../lib/theme";
 import React from "react";
 import Nav from "./Nav";
@@ -22,13 +23,19 @@ const GlobalStyle = createGlobalStyle`
     }
 `;
 
+const Wrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+`;
+
 const Layout = ({ children, title }) => {
     return (
-        <div>
+        <Wrapper>
             <Head>
                 <title>{`robiot - ${title}`}</title>
                 <meta charSet="utf-8" />
- 
+
                 {/* Generic */}
                 <meta
                     name="description"
@@ -70,7 +77,7 @@ const Layout = ({ children, title }) => {
                 <Nav />
                 {children}
             </ThemeProvider>
-        </div>
+        </Wrapper>
     );
 };
 
