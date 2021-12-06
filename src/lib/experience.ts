@@ -44,37 +44,37 @@ export const Technologies = [
     },
     {
         name: "Tailwind",
-        image: "tailwind.png"
+        image: "tailwind.png",
     },
     {
         name: "Blender",
-        image: "blender.ico"
-    }
+        image: "blender.ico",
+    },
 ];
 
 export const Other = [
     {
         name: "Photoshop",
-        image: "photoshop.png"
+        image: "photoshop.png",
     },
     {
         name: "Illustrator",
-        image: "illustrator.png"
+        image: "illustrator.png",
     },
     {
         name: "Git",
-        image: "git.png"
+        image: "git.png",
     },
     {
         name: "Bash",
-        image: "bash.png"
+        image: "bash.png",
     },
     {
         name: "Davinci Resolve",
-        image: "resolve.png"
+        image: "resolve.png",
     },
     {
         name: "Arch Linux",
-        image: "arch.png"
+        image: "arch.png",
     },
 ];
