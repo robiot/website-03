@@ -56,8 +56,6 @@ export const AboutMeText = styled.div`
 export const MeImage = styled.img`
     height: 200px;
     border-radius: 20%;
-    cursor: pointer;
-    display: block;
     margin-left: 5rem;
     @media (max-width: 900px) {
         display: none;
@@ -65,6 +63,6 @@ export const MeImage = styled.img`
 
     border: solid 3px transparent;
     &:hover {
-        border: solid 3px ${({theme}) => theme.palette.primary[600]};
+        border: solid 3px ${({ theme }) => theme.palette.primary[600]};
     }
 `;
