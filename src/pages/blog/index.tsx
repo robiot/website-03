@@ -1,9 +1,9 @@
 import type { NextPage } from "next";
-import { Container } from "../components/Container";
-import Layout from "../components/Layout";
-import { getAllPosts } from "../lib/api";
-import Posts from "../components/Blog/Posts";
-import Footer from "../components/Footer";
+import { Container } from "../../components/Container";
+import Layout from "../../components/Layout";
+import { getAllPosts } from "../../lib/api";
+import Posts from "../../components/Blog/Posts";
+import Footer from "../../components/Footer";
 
 const Blog: NextPage = ({ allPosts }: any) => {
     return (

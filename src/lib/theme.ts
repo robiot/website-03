@@ -23,9 +23,9 @@ export const DarkTheme: DefaultTheme = {
             washedOut: "#879eed",
         },
         buttonText: "#fff",
+        shadow: "#0b0e11",
     },
 };
-
 
 export const LightTheme: DefaultTheme = {
     palette: {
@@ -38,17 +38,18 @@ export const LightTheme: DefaultTheme = {
             600: "#bdbdbd",
             700: "#ededed",
             800: "#FFF",
-            900: "#F6F6F6"
+            900: "#F6F6F6",
         },
         accent: {
             default: "#fd4d4d",
             disabled: "#f5bfbf",
-            hover: "#fd6868"
+            hover: "#fd6868",
         },
         secondary: {
             default: "#5575e7",
-            washedOut: "#879eed"
+            washedOut: "#879eed",
         },
-        buttonText: "#2b2b2b"
-    }
+        buttonText: "#2b2b2b",
+        shadow: "#ededed",
+    },
 };

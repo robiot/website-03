@@ -44,26 +44,5 @@ export const Description = styled.h4`
     font-size: 1.2rem;
     font-weight: 400;
     margin-bottom: 1.3rem;
-`;
-
-export const Tags = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-`;
-
-export const Tag = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0.4rem 1rem 0.4rem 1rem;
-    border: solid 1px ${({ theme }) => theme.palette.secondary.default};
-    border-radius: 1.1rem;
-    color: ${({ theme }) => theme.palette.secondary.washedOut};
-    font-size: 0.8rem;
-
-    &:hover {
-        background-color: ${({ theme }) => theme.palette.secondary.default};
-        color: #fff;
-    }
+    word-wrap: break-word;
 `;

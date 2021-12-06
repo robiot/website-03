@@ -1,5 +1,4 @@
-import styled from "styled-components";
-import DateRangeIcon from '@mui/icons-material/DateRange';
+import DateRangeIcon from "@mui/icons-material/DateRange";
 
 import {
     PostsWrapper,
@@ -7,38 +6,38 @@ import {
     Title,
     Post,
     PostDate,
-    Tag,
-    Tags,
 } from "./Posts.style";
 import Router from "next/router";
 import { CutContent, stringToDate } from "../../lib/utils";
+import Tags from "../Tags";
+import { Post_T } from "../../types/post";
 
-const Posts = ({ posts }) => {
+const Posts = ({ posts, tag="" }) => {
     return (
         <PostsWrapper>
-            {posts.map((post: any, index: any) => (
+            {tag &&
+                <h1>Showing {posts.length} item tagged with "{tag}"</h1>
+            }
+            
+            {posts.map((post: Post_T, index: any) => (
                 <Post
                     key={index}
-                    onClick={() => {
-                        Router.push(`/post/${post.slug}`);
+                    onClick={(click: any) => {
+                        if (click.target.id != "tag") { // Hacky fix, but it works
+                            Router.push(`/post/${encodeURIComponent(post.slug)}`);
+                        }
                     }}
                 >
                     <PostDate>
-                        <DateRangeIcon fontSize="small" width="1px"/>
+                        <DateRangeIcon fontSize="small" width="1px" />
                         {stringToDate(post.date)}
                     </PostDate>
 
                     <Title>{post.title}</Title>
 
-                    <Description>
-                        {CutContent(post.content)}
-                    </Description>
-
-                    <Tags>
-                        {post.tags.map((tag: any, index: any) => (
-                            <Tag key={index}>{tag}</Tag>
-                        ))}
-                    </Tags>
+                    <Description>{CutContent(post.content)}</Description>
+                    
+                    <Tags post={post}/>
                 </Post>
             ))}
         </PostsWrapper>

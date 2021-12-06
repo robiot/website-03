@@ -37,7 +37,7 @@ const Holder = styled.div`
     background-color: ${({ theme }) => theme.palette.primary[800]};
     height: 60px;
     display: flex;
-    box-shadow: 0 8px 10px -6px ${({ theme }) => theme.palette.primary[900]};
+    box-shadow: 0 2px 10px 0px ${({ theme }) => theme.palette.shadow};
     align-items: center;
 `;
 
@@ -92,7 +92,7 @@ const Dropdown = styled.div`
     width: 100%;
     left: 0;
     z-index: 100;
-    box-shadow: 0 8px 10px -6px ${({ theme }) => theme.palette.primary[900]};
+    box-shadow: 0 2px 10px 0px ${({ theme }) => theme.palette.primary[900]};
     display: flex;
     flex-direction: column;
     @media (min-width: ${breakpoint}) {

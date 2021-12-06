@@ -24,6 +24,7 @@ declare module "styled-components" {
                 disabled: string;
             };
             buttonText: string;
+            shadow: string;
         };
     }
 }

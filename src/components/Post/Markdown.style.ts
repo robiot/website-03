@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
 export const MarkdownStyles = styled.div`
+    * {
+        word-wrap: break-word;
+    }
+
     & p {
         font-size: 1.1rem;
     }
