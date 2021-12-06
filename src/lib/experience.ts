@@ -16,8 +16,8 @@ export const Languages = [
         image: "rust.png",
     },
     {
-        name: "C/C++",
-        image: "cpp.png",
+        name: "C",
+        image: "c.png",
     },
     {
         name: "C#",

@@ -9,17 +9,17 @@ const Wrapper = styled.div`
     min-height: 100vh;
 `;
 
-const Layout = ({ children, title }) => {
+const Layout = ({ children, title, description = "Hi, I'm Robiot. I'm a software developer" }) => {
     return (
         <Wrapper>
             <Head>
-                <title>{`robiot - ${title}`}</title>
+                <title>{title}</title>
                 <meta charSet="utf-8" />
 
                 {/* Generic */}
                 <meta
                     name="description"
-                    content="Hi, I'm Robiot. I'm a software developer"
+                    content={description}
                     title="Robiot"
                 />
                 <meta name="author" content="Robiot" />
@@ -32,20 +32,20 @@ const Layout = ({ children, title }) => {
                 {/* Open graph */}
                 <meta property="og:locale" content="en_US" />
                 <meta property="og:site_name" content="robiot" />
-                <meta property="og:title" content={`Robiot - ${title}`} />
+                <meta property="og:title" content={title} />
                 <meta property="og:image" content="/img/robot.png" />
                 <meta
                     property="og:description"
-                    content="Hi, I'm Robiot. I'm a software developer"
+                    content={description}
                 />
                 <meta property="og:url" content="https://robiot.dev" />
 
                 {/* Twitter */}
-                <meta property="twitter:title" content={`Robiot - ${title}`} />
+                <meta property="twitter:title" content={title} />
                 <meta property="twitter:image" content="/images.robot.png" />
                 <meta
                     property="twitter:description"
-                    content="Hi, I'm Robiot. I'm a software developer"
+                    content={description}
                 />
                 <meta property="twitter:card" content="summary" />
 

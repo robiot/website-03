@@ -1,4 +1,4 @@
-export const StringToDate = (date_raw: string) => {
+export const stringToDate = (date_raw: string) => {
     let date = date_raw.split("-");
     if (date.length < 3) {
         return "Invalid Date";
@@ -7,3 +7,6 @@ export const StringToDate = (date_raw: string) => {
         date[2]
     }, ${date[0]}`;
 };
+
+export const CutContent = (content: string) =>
+    content.length > 114 ? `${content.substring(0, 114)}...` : content;

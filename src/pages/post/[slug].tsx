@@ -8,7 +8,7 @@ import Layout from "../../components/Layout";
 import PostBody from "../../components/Post/post-body";
 import { getAllPosts, getPostBySlug } from "../../lib/api";
 import { markdownToHtml } from "../../lib/markdown";
-import { StringToDate } from "../../lib/utils";
+import { CutContent, stringToDate } from "../../lib/utils";
 
 const Wrapper = styled.div`
     margin-top: 4rem;
@@ -33,13 +33,13 @@ const Title = styled.h1`
 
 const Post: NextPage = ({ post }: any) => {
     return (
-        <Layout title={post.title}>
+        <Layout title={post.title} description={CutContent(post.content)}>
             <Container>
                 <Wrapper>
                     <PostInfo>
                         <PostInfoItem>
                             <DateRangeIcon fontSize="small" width="1px" />
-                            {StringToDate(post.date)}
+                            {stringToDate(post.date)}
                         </PostInfoItem>
 
                         <PostInfoItem>

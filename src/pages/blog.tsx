@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 
 const Blog: NextPage = ({ allPosts }: any) => {
     return (
-        <Layout title="Blog posts">
+        <Layout title="Blog | robiot">
             <Container>
                 <Posts posts={allPosts} />
             </Container>

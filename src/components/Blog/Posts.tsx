@@ -11,12 +11,12 @@ import {
     Tags,
 } from "./Posts.style";
 import Router from "next/router";
-import { StringToDate } from "../../lib/utils";
+import { CutContent, stringToDate } from "../../lib/utils";
 
 const Posts = ({ posts }) => {
     return (
         <PostsWrapper>
-            {posts.map((post, index) => (
+            {posts.map((post: any, index: any) => (
                 <Post
                     key={index}
                     onClick={() => {
@@ -25,19 +25,17 @@ const Posts = ({ posts }) => {
                 >
                     <PostDate>
                         <DateRangeIcon fontSize="small" width="1px"/>
-                        {StringToDate(post.date)}
+                        {stringToDate(post.date)}
                     </PostDate>
 
                     <Title>{post.title}</Title>
 
                     <Description>
-                        {post.content.length > 114
-                            ? `${post.content.substring(0, 114)}...`
-                            : post.content}
+                        {CutContent(post.content)}
                     </Description>
 
                     <Tags>
-                        {post.tags.map((tag, index) => (
+                        {post.tags.map((tag: any, index: any) => (
                             <Tag key={index}>{tag}</Tag>
                         ))}
                     </Tags>

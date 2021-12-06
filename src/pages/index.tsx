@@ -5,10 +5,9 @@ import About from "../components/About/About";
 import Experience from "../components/Experience/Experience";
 import Footer from "../components/Footer";
 
-
 const IndexPage: NextPage = () => {
     return (
-        <Layout title="Home">
+        <Layout title="robiot - Home">
             <Home />
             <About />
             <Experience />
