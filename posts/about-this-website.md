@@ -1,6 +1,6 @@
 ---
 title: "About this website"
-date: "2021-12-5"
+date: "2021/12/5"
 author: "robiot"
 tags: ["next.js", "typescript", "web"]
 ---
