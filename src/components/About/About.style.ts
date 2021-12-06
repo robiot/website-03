@@ -62,4 +62,9 @@ export const MeImage = styled.img`
     @media (max-width: 900px) {
         display: none;
     }
+
+    border: solid 3px transparent;
+    &:hover {
+        border: solid 3px ${({theme}) => theme.palette.primary[600]};
+    }
 `;

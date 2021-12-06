@@ -1,7 +1,9 @@
 import styled from "styled-components";
-import React from "react";
+import React, { useContext } from "react";
 import Nav from "./Nav";
 import Head from "next/head";
+import CustomParticles from "./Particles";
+import { themeCtx } from "../pages/_app";
 
 const Wrapper = styled.div`
     display: flex;
@@ -9,7 +11,14 @@ const Wrapper = styled.div`
     min-height: 100vh;
 `;
 
-const Layout = ({ children, title, description = "Hi, I'm Robiot. I'm a software developer" }) => {
+const Layout = ({
+    children,
+    title,
+    description = "Hi, I'm Robiot. I'm a software developer",
+    particles = false,
+}) => {
+    const theme = useContext(themeCtx);
+
     return (
         <Wrapper>
             <Head>
@@ -17,11 +26,7 @@ const Layout = ({ children, title, description = "Hi, I'm Robiot. I'm a software
                 <meta charSet="utf-8" />
 
                 {/* Generic */}
-                <meta
-                    name="description"
-                    content={description}
-                    title="Robiot"
-                />
+                <meta name="description" content={description} title="Robiot" />
                 <meta name="author" content="Robiot" />
                 <meta
                     name="keywords"
@@ -34,24 +39,19 @@ const Layout = ({ children, title, description = "Hi, I'm Robiot. I'm a software
                 <meta property="og:site_name" content="robiot" />
                 <meta property="og:title" content={title} />
                 <meta property="og:image" content="/img/robot.png" />
-                <meta
-                    property="og:description"
-                    content={description}
-                />
+                <meta property="og:description" content={description} />
                 <meta property="og:url" content="https://robiot.dev" />
 
                 {/* Twitter */}
                 <meta property="twitter:title" content={title} />
                 <meta property="twitter:image" content="/images.robot.png" />
-                <meta
-                    property="twitter:description"
-                    content={description}
-                />
+                <meta property="twitter:description" content={description} />
                 <meta property="twitter:card" content="summary" />
 
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Nav />
+            {theme[0] == "dark" && particles && <CustomParticles />}
             {children}
         </Wrapper>
     );
