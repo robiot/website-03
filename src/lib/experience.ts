@@ -17,7 +17,7 @@ export const Languages = [
     },
     {
         name: "C",
-        image: "c.png",
+        image: "c1.png",
     },
     {
         name: "C#",
