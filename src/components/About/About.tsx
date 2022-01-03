@@ -31,8 +31,8 @@ const About = () => {
                             projects got really popular. Thanks!
                         </p>
                     </AboutMeText>
-                    {/* <MeImage src="/img/robot.png" /> */}
-                    <MeImage src="/img/christmas-robot.png" />
+                    <MeImage src="/img/robot.png" />
+                    {/* <MeImage src="/img/christmas-robot.png" /> */}
                 </AboutMeWrapper>
             </Container>
         </Section>

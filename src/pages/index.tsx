@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 
 const IndexPage: NextPage = () => {
     return (
-        <Layout title="robiot - Home" particles={true}>
+        <Layout title="robiot - Home">
             <Home />
             <About />
             <Experience />
