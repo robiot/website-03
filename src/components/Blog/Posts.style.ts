@@ -37,12 +37,5 @@ export const PostDate = styled.div`
 export const Title = styled.h1`
     font-size: 1.7rem;
     font-weight: 600;
-    margin-bottom: 0.5rem;
-`;
-
-export const Description = styled.h4`
-    font-size: 1.2rem;
-    font-weight: 400;
     margin-bottom: 1.3rem;
-    word-wrap: break-word;
 `;

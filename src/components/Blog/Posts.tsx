@@ -2,7 +2,6 @@ import DateRangeIcon from "@mui/icons-material/DateRange";
 
 import {
     PostsWrapper,
-    Description,
     Title,
     Post,
     PostDate,
@@ -33,10 +32,7 @@ const Posts = ({ posts, tag="" }) => {
                         {stringToDate(post.date)}
                     </PostDate>
 
-                    <Title>{post.title}</Title>
-
-                    <Description>{CutContent(post.content)}</Description>
-                    
+                    <Title>{post.title}</Title>                    
                     <Tags post={post}/>
                 </Post>
             ))}
