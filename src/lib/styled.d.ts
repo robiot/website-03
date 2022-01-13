@@ -20,11 +20,16 @@ declare module "styled-components" {
             };
             accent: {
                 default: string;
-                hover: string;
-                disabled: string;
+                brighter: string;
             };
             buttonText: string;
             shadow: string;
+        };
+
+        breakpoints: {
+            large: string;
+            medium: string;
+            small: string;
         };
     }
 }

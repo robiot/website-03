@@ -6,7 +6,7 @@ import { Post_T } from "../../../types/post";
 import Tags from "../../Tags";
 import { Post, PostDate, PostsWrapper, Title } from "./Posts.style";
 
-export const Posts = ({ posts, tag = "" }) => {
+export const Posts = ({ posts, tag = "" }: { posts: any; tag: string }) => {
     return (
         <PostsWrapper>
             {tag && (

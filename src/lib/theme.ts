@@ -14,9 +14,8 @@ export const DarkTheme: DefaultTheme = {
             900: "#0b0e11",
         },
         accent: {
-            default: "#fd4d4d",
-            disabled: "#f5bfbf",
-            hover: "#fd6868",
+            default: "#4961dc",
+            brighter: "#6a98f0",
         },
         secondary: {
             default: "#5575e7",
@@ -24,6 +23,12 @@ export const DarkTheme: DefaultTheme = {
         },
         buttonText: "#fff",
         shadow: "#0b0e11",
+    },
+
+    breakpoints: {
+        large: "1000px",
+        medium: "930px",
+        small: "550px",
     },
 };
 
@@ -41,9 +46,8 @@ export const LightTheme: DefaultTheme = {
             900: "#F6F6F6",
         },
         accent: {
-            default: "#fd4d4d",
-            disabled: "#f5bfbf",
-            hover: "#fd6868",
+            default: "#4961dc",
+            brighter: "#6a98f0",
         },
         secondary: {
             default: "#5575e7",
@@ -51,5 +55,11 @@ export const LightTheme: DefaultTheme = {
         },
         buttonText: "#2b2b2b",
         shadow: "#ededed",
+    },
+
+    breakpoints: {
+        large: "1000px",
+        medium: "930px",
+        small: "550px",
     },
 };

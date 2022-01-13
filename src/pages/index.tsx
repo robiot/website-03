@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import { About } from "../components/HomePage/About/About";
 import { Experience } from "../components/HomePage/Experience/Experience";
 import { Home } from "../components/HomePage/Home/Home";
+import { Projects } from "../components/HomePage/Projects/Projects";
 import Layout from "../components/Layout";
 
 const IndexPage: NextPage = () => {
@@ -12,6 +13,7 @@ const IndexPage: NextPage = () => {
             <Home />
             <About />
             <Experience />
+            <Projects />
             <Footer />
         </Layout>
     );

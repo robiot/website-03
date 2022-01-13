@@ -3,7 +3,7 @@ import MailIcon from "@mui/icons-material/Mail";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 
-import { Container } from "../../../style/Container";
+import { Container } from "../../../style/style";
 import {
     BackgroundImage,
     LandingIcon,

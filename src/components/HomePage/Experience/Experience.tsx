@@ -1,4 +1,4 @@
-import { Container } from "../../../style/Container";
+import { Container } from "../../../style/style";
 import { Languages, Other, Technologies } from "./experience";
 import {
     ExperienceColumn,
@@ -23,7 +23,7 @@ const getItems = (itemtype: { name: string; image: string }[]) => {
 
 export const Experience = () => {
     return (
-        <Section id="experience">
+        <Section>
             <Container>
                 <SectionTitle>Experience</SectionTitle>
                 <Experiences>

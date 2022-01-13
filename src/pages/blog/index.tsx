@@ -4,7 +4,7 @@ import { Posts } from "../../components/BlogPage/Blog/Posts";
 import Footer from "../../components/Footer";
 import Layout from "../../components/Layout";
 import { getAllPosts } from "../../lib/api";
-import { Container } from "../../style/Container";
+import { Container } from "../../style/style";
 
 const Blog: NextPage = ({ allPosts }: any) => {
     return (

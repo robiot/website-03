@@ -7,27 +7,26 @@ import { useContext, useState } from "react";
 import styled from "styled-components";
 
 import { themeCtx as themeContext } from "../pages/_app";
-import { Container } from "../style/Container";
+import { Container } from "../style/style";
 
 const NavItemsList = [
     {
         name: "About",
         to: "/#about",
     },
-    // {
-    //     name: "Projects",
-    //     to: "/#projects",
-    // },
+    {
+        name: "Projects",
+        to: "/#projects",
+    },
     {
         name: "Blog",
         to: "/blog",
     },
 ];
 
-const breakpoint = "930px";
-
 const NavContainer = styled(Container)`
     flex-grow: 0;
+    height: 100%;
 `;
 
 const Holder = styled.div`
@@ -49,7 +48,8 @@ const Wrapper = styled.div`
 `;
 
 const NavItems = styled(Wrapper)`
-    @media (max-width: ${breakpoint}) {
+    height: 100%;
+    @media (max-width: ${({ theme }) => theme.breakpoints.medium}) {
         display: none;
     }
 `;
@@ -78,7 +78,7 @@ const HomeImage = styled.img`
 const MenuIconWrapper = styled.div`
     margin-top: 5px;
     cursor: pointer;
-    @media (min-width: ${breakpoint}) {
+    @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
         display: none;
     }
 `;
@@ -95,7 +95,7 @@ const Dropdown = styled.div`
     box-shadow: 0 2px 10px 0px ${({ theme }) => theme.palette.primary[900]};
     display: flex;
     flex-direction: column;
-    @media (min-width: ${breakpoint}) {
+    @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
         display: none;
     }
 `;
@@ -106,7 +106,7 @@ const ThemeSwitcher = styled.div`
     margin-top: 0.5rem;
     margin-right: 2rem;
     cursor: pointer;
-    @media (max-width: ${breakpoint}) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.medium}) {
         display: none;
     }
     &:hover {

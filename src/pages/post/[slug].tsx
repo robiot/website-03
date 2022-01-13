@@ -11,7 +11,7 @@ import Tags from "../../components/Tags";
 import { getAllPosts, getAllPostTags, getPostBySlug } from "../../lib/api";
 import { markdownToHtml } from "../../lib/markdown";
 import { CutContent, stringToDate } from "../../lib/utils";
-import { Container } from "../../style/Container";
+import { Container } from "../../style/style";
 
 const Wrapper = styled.div`
     margin-top: 4rem;
