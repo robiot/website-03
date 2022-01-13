@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
-import Layout from "../components/Layout";
 import styled from "styled-components";
+
+import Layout from "../components/Layout";
 
 const Wrapper = styled.h1`
     position: absolute;

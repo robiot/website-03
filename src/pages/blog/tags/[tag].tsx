@@ -1,32 +1,29 @@
 import type { NextPage } from "next";
-import { Container } from "../../../components/Container";
+
+import { Posts } from "../../../components/BlogPage/Blog/Posts";
+import Footer from "../../../components/Footer";
 import Layout from "../../../components/Layout";
 import { getAllPosts, getAllPostTags } from "../../../lib/api";
-import Posts from "../../../components/Blog/Posts";
-import Footer from "../../../components/Footer";
+import { Container } from "../../../style/Container";
 
 const Blog: NextPage = ({ allPosts, tag }: any) => {
     return (
         <Layout title="Blog | robiot">
             <Container>
-                <Posts posts={allPosts} tag={tag}/>
+                <Posts posts={allPosts} tag={tag} />
             </Container>
             <Footer />
         </Layout>
     );
 };
 
-export async function getStaticProps({ params }) {
-    const allPosts = getAllPosts([
-        "title",
-        "content",
-        "date",
-        "author",
-        "tags",
-        "slug",
-    ], params.tag);
+export async function getStaticProps({ params }: { params: any }) {
+    const allPosts = getAllPosts(
+        ["title", "content", "date", "author", "tags", "slug"] as any,
+        params.tag
+    );
 
-    const tag = params.tag;
+    const { tag } = params;
 
     return {
         props: { allPosts, tag },
@@ -47,6 +44,5 @@ export async function getStaticPaths() {
         fallback: false,
     };
 }
-
 
 export default Blog;

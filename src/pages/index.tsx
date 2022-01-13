@@ -1,9 +1,10 @@
 import type { NextPage } from "next";
-import Layout from "../components/Layout";
-import Home from "../components/Home/Home";
-import About from "../components/About/About";
-import Experience from "../components/Experience/Experience";
+
 import Footer from "../components/Footer";
+import { About } from "../components/HomePage/About/About";
+import { Experience } from "../components/HomePage/Experience/Experience";
+import { Home } from "../components/HomePage/Home/Home";
+import Layout from "../components/Layout";
 
 const IndexPage: NextPage = () => {
     return (

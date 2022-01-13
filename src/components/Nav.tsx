@@ -1,13 +1,13 @@
-import styled from "styled-components";
-import { Container } from "./Container";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
 import Router from "next/router";
 import { useContext, useState } from "react";
-import LightModeIcon from "@mui/icons-material/LightMode";
-import DarkModeIcon from "@mui/icons-material/DarkMode";
+import styled from "styled-components";
 
-import MenuIcon from "@mui/icons-material/Menu";
-import { themeCtx } from "../pages/_app";
+import { themeCtx as themeContext } from "../pages/_app";
+import { Container } from "../style/Container";
 
 const NavItemsList = [
     {
@@ -116,10 +116,11 @@ const ThemeSwitcher = styled.div`
 
 const Nav = () => {
     const [dropdown, setDropdown] = useState(false);
-    const [theme, setTheme] = useContext(themeCtx);
+    const [theme, setTheme] = useContext(themeContext);
 
     const setThemeEverywhere = () => {
         const cTheme = theme == "light" ? "dark" : "light";
+
         setTheme(cTheme);
         localStorage.setItem("theme", cTheme);
     };

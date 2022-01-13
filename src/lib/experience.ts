@@ -23,6 +23,10 @@ export const Languages = [
         name: "C#",
         image: "csharp.png",
     },
+    {
+        name: "Dart",
+        image: "dart.png",
+    },
 ];
 
 export const Technologies = [
@@ -47,8 +51,8 @@ export const Technologies = [
         image: "tailwind.png",
     },
     {
-        name: "Blender",
-        image: "blender.ico",
+        name: "Flutter",
+        image: "flutter.svg",
     },
 ];
 
@@ -76,5 +80,9 @@ export const Other = [
     {
         name: "Arch Linux",
         image: "arch.png",
+    },
+    {
+        name: "Blender",
+        image: "blender.ico",
     },
 ];

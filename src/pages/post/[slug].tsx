@@ -1,16 +1,17 @@
 import DateRangeIcon from "@mui/icons-material/DateRange";
 import PersonIcon from "@mui/icons-material/Person";
 import type { NextPage } from "next";
+import Link from "next/link";
 import styled from "styled-components";
-import { Container } from "../../components/Container";
+
+import { PostBody } from "../../components/BlogPage/Post/post-body";
 import Footer from "../../components/Footer";
 import Layout from "../../components/Layout";
-import PostBody from "../../components/Post/post-body";
 import Tags from "../../components/Tags";
 import { getAllPosts, getAllPostTags, getPostBySlug } from "../../lib/api";
 import { markdownToHtml } from "../../lib/markdown";
 import { CutContent, stringToDate } from "../../lib/utils";
-import Link from "next/link";
+import { Container } from "../../style/Container";
 
 const Wrapper = styled.div`
     margin-top: 4rem;
@@ -89,7 +90,7 @@ const Post: NextPage = ({ post }: any) => {
     );
 };
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }: { params: any }) {
     const post: any = getPostBySlug(params.slug, [
         "title",
         "date",
@@ -97,7 +98,7 @@ export async function getStaticProps({ params }) {
         "author",
         "content",
         "tags",
-    ]);
+    ] as any);
     const content = await markdownToHtml(post.content || "");
 
     return {
@@ -111,7 +112,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-    const posts = getAllPosts(["slug"]);
+    const posts = getAllPosts(["slug"] as any);
     const tags = getAllPostTags();
 
     return {

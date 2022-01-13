@@ -1,9 +1,10 @@
 import type { NextPage } from "next";
-import { Container } from "../../components/Container";
+
+import { Posts } from "../../components/BlogPage/Blog/Posts";
+import Footer from "../../components/Footer";
 import Layout from "../../components/Layout";
 import { getAllPosts } from "../../lib/api";
-import Posts from "../../components/Blog/Posts";
-import Footer from "../../components/Footer";
+import { Container } from "../../style/Container";
 
 const Blog: NextPage = ({ allPosts }: any) => {
     return (
@@ -25,7 +26,7 @@ export async function getStaticProps() {
         "author",
         "tags",
         "slug",
-    ]);
+    ] as any);
 
     return {
         props: { allPosts },

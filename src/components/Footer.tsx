@@ -12,11 +12,7 @@ const Wrapper = styled.div`
 `;
 
 const Footer = () => {
-    return (
-        <Wrapper>
-            Made without ♥ in Next.js by Robiot
-        </Wrapper>
-    );
+    return <Wrapper>Made without ♥ in Next.js ;)</Wrapper>;
 };
 
 export default Footer;

@@ -1,16 +1,16 @@
+import { Languages, Other, Technologies } from "../../../lib/experience";
+import { Container } from "../../../style/Container";
 import {
-    Section,
-    SectionTitle,
+    ExperienceColumn,
     ExperienceItem,
     Experiences,
-    ExperienceColumn,
     ExperienceTitle,
+    Section,
+    SectionTitle,
     Separator,
 } from "./Experience.style";
-import { Container } from "../Container";
-import { Languages, Technologies, Other } from "../../lib/experience";
 
-const Experience = () => {
+export const Experience = () => {
     return (
         <Section id="experience">
             <Container>
@@ -69,5 +69,3 @@ const Experience = () => {
         </Section>
     );
 };
-
-export default Experience;

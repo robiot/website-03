@@ -27,14 +27,18 @@ export const MarkdownStyles = styled.div`
     }
 
     & a {
-        color: ${({theme}) => theme.palette.secondary.default};
+        color: ${({ theme }) => theme.palette.secondary.default};
         text-decoration: none;
         &:hover {
-            text-decoration: underline; 
+            text-decoration: underline;
         }
     }
 
-    & h1, h2, h3, h4, h5 {
+    & h1,
+    h2,
+    h3,
+    h4,
+    h5 {
         margin-top: 1.5rem;
     }
 

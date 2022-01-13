@@ -1,9 +1,10 @@
-import styled from "styled-components";
-import React, { useContext } from "react";
-import Nav from "./Nav";
 import Head from "next/head";
+import React, { useContext } from "react";
+import styled from "styled-components";
+
+import { themeCtx as themeContext } from "../pages/_app";
+import Nav from "./Nav";
 import CustomParticles from "./Particles";
-import { themeCtx } from "../pages/_app";
 
 const Wrapper = styled.div`
     display: flex;
@@ -16,8 +17,13 @@ const Layout = ({
     title,
     description = "Hi, I'm Robiot. I'm a software developer",
     particles = false,
+}: {
+    children: any;
+    title: string;
+    description?: string;
+    particles?: boolean;
 }) => {
-    const theme = useContext(themeCtx);
+    const theme = useContext(themeContext);
 
     return (
         <Wrapper>

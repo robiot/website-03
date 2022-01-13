@@ -1,7 +1,20 @@
 {
-    "extends": "next/core-web-vitals",
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 2021
+    },
+    "extends": ["plugin:lvksh/recommended"],
+    "ignorePatterns": ["!**/*"],
+    "plugins": ["lvksh", "react", "react-hooks"],
+    "env": {
+        "browser": true,
+        "node": true,
+        "jasmine": true
+    },
     "rules": {
-        "react/no-unescaped-entities": 0,
-        "@next/next/no-img-element": 0
+        "quotes": ["error", "double"],
+        "unicorn/prefer-module": "off",
+        "unicorn/prevent-abbreviations": "off",
+        "unicorn/prefer-at": "off"
     }
 }

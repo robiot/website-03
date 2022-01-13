@@ -1,10 +1,13 @@
-import type { AppProps } from "next/app";
-import NProgress from "nprogress";
 import "nprogress/nprogress.css";
+
+import type { AppProps } from "next/app";
 import Router from "next/router";
-import { DarkTheme, LightTheme } from "../lib/theme";
-import { useState, createContext, useEffect } from "react";
+import NProgress from "nprogress";
+import React from "react";
+import { createContext, useEffect, useState } from "react";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
+
+import { DarkTheme, LightTheme } from "../lib/theme";
 
 Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeComplete", () => NProgress.done());
@@ -47,6 +50,7 @@ const App = ({ Component, pageProps }: AppProps) => {
     const theme = useState<themes>("dark");
 
     useEffect(() => {
+        // eslint-disable-next-line unicorn/prefer-at
         theme[1]((localStorage.getItem("theme") || "dark") as themes);
     });
 

@@ -23,7 +23,7 @@ export const Tag = styled.div`
     }
 `;
 
-const Tags = ( { post } ) => {
+const Tags = ({ post }: { post: any }) => {
     return (
         <TagsWrapper>
             {post.tags.map((tag: any, index: any) => (

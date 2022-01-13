@@ -4,4 +4,4 @@ export const stringToDate = (date: string) =>
     format(new Date(date), "MMMM d, yyyy");
 
 export const CutContent = (content: string) =>
-    content.length > 114 ? `${content.substring(0, 114)}...` : content;
+    content.length > 114 ? `${content.slice(0, 114)}...` : content;

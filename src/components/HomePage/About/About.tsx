@@ -1,15 +1,15 @@
+import { Container } from "../../../style/Container";
 import {
+    AboutMeText,
     AboutMeWrapper,
+    MeImage,
+    Section,
     SectionBg,
     SectionLine,
-    Section,
     SectionTitle,
-    MeImage,
-    AboutMeText,
 } from "./About.style";
-import { Container } from "../Container";
 
-const About = () => {
+export const About = () => {
     return (
         <Section id="about">
             <SectionBg />
@@ -20,11 +20,10 @@ const About = () => {
                 <AboutMeWrapper>
                     <AboutMeText>
                         <p>
-                            Hi I'm Robiot, a self-taught software developer. I
-                            do software development as a hobby and I really
-                            enjoy it. I have been coding seriously since 2020,
-                            but I've made some small projects before. I also
-                            practice some ethical hacking in my free time.
+                            Hi I'm Elliot (aka robiot), a self-taught software
+                            developer. I do software development as a hobby and
+                            I really enjoy it. I've been coding seriously since
+                            2020, but I've made some small projects before.
                         </p>
                         <p>
                             I upload most of my projects to Github, where some
@@ -38,5 +37,3 @@ const About = () => {
         </Section>
     );
 };
-
-export default About;
