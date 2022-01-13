@@ -38,7 +38,7 @@ export const ExperienceTitle = styled.h2`
 `;
 
 export const ExperienceItem = styled.div`
-    background-color: ${({ theme }) => theme.palette.primary[700]};
+    background-color: ${({ theme }) => theme.palette.primary[800]};
     width: 100%;
     height: 3rem;
     border-radius: 0.5rem;
@@ -46,8 +46,9 @@ export const ExperienceItem = styled.div`
     padding: 0.6rem;
     align-items: center;
     cursor: pointer;
+    box-shadow: ${({ theme }) => theme.palette.primary[700]} 2px 5px 10px 2px;
     &:hover {
-        box-shadow: 0 0 4px ${({ theme }) => theme.palette.primary[600]};
+        transform: rotate(3deg);
     }
     img {
         margin-right: 1rem;

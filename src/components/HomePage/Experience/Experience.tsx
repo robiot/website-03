@@ -1,3 +1,6 @@
+import { useContext } from "react";
+
+import { themeCtx, themes } from "../../../pages/_app";
 import { Container } from "../../../style/style";
 import { Languages, Other, Technologies } from "./experience";
 import {
@@ -10,10 +13,16 @@ import {
     Separator,
 } from "./Experience.style";
 
-const getItems = (itemtype: { name: string; image: string }[]) => {
+const getItems = (
+    itemtype: { name: string; image: string }[],
+    theme: themes
+) => {
     return itemtype.map((item, index) => {
         return (
-            <ExperienceItem key={index}>
+            <ExperienceItem
+                key={index}
+                style={{ boxShadow: theme == "light" ? undefined : "none" }}
+            >
                 <img alt={item.name} src={`/img/experiences/${item.image}`} />
                 {item.name}
             </ExperienceItem>
@@ -22,6 +31,8 @@ const getItems = (itemtype: { name: string; image: string }[]) => {
 };
 
 export const Experience = () => {
+    const [theme, _setTheme] = useContext(themeCtx);
+
     return (
         <Section>
             <Container>
@@ -29,21 +40,21 @@ export const Experience = () => {
                 <Experiences>
                     <ExperienceColumn>
                         <ExperienceTitle>Languages</ExperienceTitle>
-                        {getItems(Languages)}
+                        {getItems(Languages, theme)}
                     </ExperienceColumn>
 
                     <Separator />
 
                     <ExperienceColumn>
                         <ExperienceTitle>Technologies</ExperienceTitle>
-                        {getItems(Technologies)}
+                        {getItems(Technologies, theme)}
                     </ExperienceColumn>
 
                     <Separator />
 
                     <ExperienceColumn>
                         <ExperienceTitle>Other</ExperienceTitle>
-                        {getItems(Other)}
+                        {getItems(Other, theme)}
                     </ExperienceColumn>
                 </Experiences>
             </Container>

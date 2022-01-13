@@ -1,7 +1,4 @@
-import { useContext } from "react";
 import styled from "styled-components";
-
-import { themeCtx } from "../../../pages/_app";
 
 export const ProjectDiv = styled.div`
     background: ${({ theme }) => theme.palette.primary[800]};

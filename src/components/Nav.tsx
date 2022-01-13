@@ -19,6 +19,10 @@ const NavItemsList = [
         to: "/#projects",
     },
     {
+        name: "Gallery",
+        to: "/#gallery",
+    },
+    {
         name: "Blog",
         to: "/blog",
     },
@@ -87,8 +91,9 @@ const Dropdown = styled.div`
     background-color: ${({ theme }) => theme.palette.primary[700]};
     top: 60px;
     position: fixed;
-    height: 10rem;
+    height: auto;
     padding: 1rem;
+    height: 20rem;
     width: 100%;
     left: 0;
     z-index: 100;
