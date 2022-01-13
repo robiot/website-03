@@ -90,7 +90,7 @@ const Post: NextPage = ({ post }: any) => {
     );
 };
 
-export async function getStaticProps({ params }: { params: any }) {
+export async function getStaticProps({ params }) {
     const post: any = getPostBySlug(params.slug, [
         "title",
         "date",
@@ -98,7 +98,7 @@ export async function getStaticProps({ params }: { params: any }) {
         "author",
         "content",
         "tags",
-    ] as any);
+    ]);
     const content = await markdownToHtml(post.content || "");
 
     return {
@@ -112,7 +112,7 @@ export async function getStaticProps({ params }: { params: any }) {
 }
 
 export async function getStaticPaths() {
-    const posts = getAllPosts(["slug"] as any);
+    const posts = getAllPosts(["slug"]);
     const tags = getAllPostTags();
 
     return {
