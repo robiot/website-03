@@ -14,7 +14,7 @@ const getItems = (itemtype: { name: string; image: string }[]) => {
     return itemtype.map((item, index) => {
         return (
             <ExperienceItem key={index}>
-                <img alt="" src={`/img/experiences/${item.image}`} />
+                <img alt={item.name} src={`/img/experiences/${item.image}`} />
                 {item.name}
             </ExperienceItem>
         );
