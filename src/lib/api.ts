@@ -1,6 +1,7 @@
+import fs from "fs";
 import matter from "gray-matter";
-import fs from "node:fs";
-import { join } from "node:path";
+// eslint-disable-next-line unicorn/import-style
+import { join } from "path";
 
 import { Post_T } from "../types/post";
 
