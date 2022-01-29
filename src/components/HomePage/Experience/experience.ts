@@ -51,6 +51,10 @@ export const Technologies = [
         image: "tailwind.png",
     },
     {
+        name: "React Native",
+        image: "react.png",
+    },
+    {
         name: "Flutter",
         image: "flutter.svg",
     },
