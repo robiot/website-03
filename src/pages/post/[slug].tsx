@@ -1,6 +1,7 @@
 import DateRangeIcon from "@mui/icons-material/DateRange";
 import PersonIcon from "@mui/icons-material/Person";
 import type { NextPage } from "next";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import styled from "styled-components";
 
@@ -8,7 +9,14 @@ import { PostBody } from "../../components/BlogPage/Post/post-body";
 import Footer from "../../components/Footer";
 import Layout from "../../components/Layout";
 import Tags from "../../components/Tags";
-import { getAllPosts, getAllPostTags, getPostBySlug } from "../../lib/api";
+import {
+    copyToPublic,
+    ensureFolder,
+    getAllPosts,
+    getAllPostTags,
+    getPostBySlug,
+    getPostImagesBySlug,
+} from "../../lib/api";
 import { markdownToHtml } from "../../lib/markdown";
 import { CutContent, stringToDate } from "../../lib/utils";
 import { Container } from "../../style/style";
@@ -52,6 +60,8 @@ const MoreBlogsLink = styled.a`
 `;
 
 const Post: NextPage = ({ post }: any) => {
+    // console.log(post);
+
     return (
         <Layout title={post.title} description={CutContent(post.content)}>
             <Container>
@@ -68,7 +78,7 @@ const Post: NextPage = ({ post }: any) => {
                         </PostInfoItem>
                     </PostInfo>
                     <Title>{post.title}</Title>
-                    <PostBody content={post.content} />
+                    <PostBody content={post.content} slug={post.slug} />
                 </Wrapper>
 
                 <Separator />
@@ -91,22 +101,24 @@ const Post: NextPage = ({ post }: any) => {
 };
 
 export async function getStaticProps({ params }: { params: any }) {
-    const post: any = getPostBySlug(params.slug, [
+    const post = getPostBySlug(params.slug + "/index.md", [
         "title",
         "date",
         "slug",
         "author",
         "content",
         "tags",
-    ] as any);
-    const content = await markdownToHtml(post.content || "");
+    ]);
+
+    ensureFolder(post.slug);
+
+    getPostImagesBySlug(post.slug).map((image) =>
+        copyToPublic(image.path, post.slug, image.name)
+    );
 
     return {
         props: {
-            post: {
-                ...post,
-                content,
-            },
+            post,
         },
     };
 }

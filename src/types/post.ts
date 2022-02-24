@@ -1,8 +1,8 @@
 export type Post_T = {
     title: string;
-    content: string;
     date: string;
-    author: string;
-    tags: string[];
     slug: string;
+    author: string;
+    content: string;
+    tags: string[];
 };

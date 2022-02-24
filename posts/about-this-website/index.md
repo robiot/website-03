@@ -10,7 +10,7 @@ Hello folks and welcome to the first blog on this website. It is mostly psuedo s
 ## Why did I even make a new website
 I thought my old website looked a little bit odd. The blu/purple ish colors made it just look weird. Here you can see the old website vs the new one:
 
-![Old website](/img/blog/about-this-website/old-website.png) ![New website](/img/blog/about-this-website/new-web.png)
+![Old website](old-website.png) ![New website](new-web.png)
 
 ## Making this website
 To make this website, I used Next.js and styled components.

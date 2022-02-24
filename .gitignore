@@ -1,5 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+public/img/blog/**
 # dependencies
 /node_modules
 /.pnp
@@ -35,3 +36,5 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+.obsidian/

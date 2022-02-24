@@ -1,6 +1,7 @@
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import styled from "styled-components";
 
-export const MarkdownStyles = styled.div`
+export const MarkdownStyles = styled(ReactMarkdown)`
     * {
         word-wrap: break-word;
     }
