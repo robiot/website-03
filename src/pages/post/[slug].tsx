@@ -1,7 +1,6 @@
 import DateRangeIcon from "@mui/icons-material/DateRange";
 import PersonIcon from "@mui/icons-material/Person";
 import type { NextPage } from "next";
-import dynamic from "next/dynamic";
 import Link from "next/link";
 import styled from "styled-components";
 
@@ -17,7 +16,6 @@ import {
     getPostBySlug,
     getPostImagesBySlug,
 } from "../../lib/api";
-import { markdownToHtml } from "../../lib/markdown";
 import { CutContent, stringToDate } from "../../lib/utils";
 import { Container } from "../../style/style";
 
@@ -60,8 +58,6 @@ const MoreBlogsLink = styled.a`
 `;
 
 const Post: NextPage = ({ post }: any) => {
-    // console.log(post);
-
     return (
         <Layout title={post.title} description={CutContent(post.content)}>
             <Container>

@@ -17,6 +17,7 @@ export const ensureFolder = (slug: string) => {
         fs.mkdirSync(blogImgPath);
     }
 };
+
 export const copyToPublic = (from: string, slug: string, filename: string) => {
     const blogImgPath = path.join(process.cwd(), "public/img/blog", slug);
 
