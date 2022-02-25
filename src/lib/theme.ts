@@ -30,6 +30,8 @@ export const DarkTheme: DefaultTheme = {
         medium: "930px",
         small: "550px",
     },
+
+    theme: "dark",
 };
 
 export const LightTheme: DefaultTheme = {
@@ -62,4 +64,6 @@ export const LightTheme: DefaultTheme = {
         medium: "930px",
         small: "550px",
     },
+
+    theme: "light",
 };

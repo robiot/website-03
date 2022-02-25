@@ -14,9 +14,12 @@ Router.events.on("routeChangeComplete", () => NProgress.done());
 Router.events.on("routeChangeError", () => NProgress.done());
 
 const GlobalStyle = createGlobalStyle`
+    :root {
+        color-scheme: ${({ theme }) => theme.theme};
+    }
+
     * { 
         box-sizing: border-box;
-        transition: background-color 150ms, color 100ms, box-shadow 100ms;
     }
     
     html, body {

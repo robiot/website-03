@@ -5,6 +5,7 @@ export const TagsWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
+    width: 40%;
 `;
 
 export const Tag = styled.div`
