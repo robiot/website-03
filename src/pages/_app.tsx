@@ -3,7 +3,7 @@ import "nprogress/nprogress.css";
 import type { AppProps } from "next/app";
 import Router from "next/router";
 import NProgress from "nprogress";
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import { createContext, useEffect, useState } from "react";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 

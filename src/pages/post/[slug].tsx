@@ -1,8 +1,7 @@
-import DateRangeIcon from "@mui/icons-material/DateRange";
-import PersonIcon from "@mui/icons-material/Person";
 import type { NextPage } from "next";
 import Link from "next/link";
 import styled from "styled-components";
+import { FaCalendar, FaUser } from "react-icons/fa";
 
 import { PostBody } from "../../components/BlogPage/Post/post-body";
 import Footer from "../../components/Footer";
@@ -64,12 +63,12 @@ const Post: NextPage = ({ post }: any) => {
                 <Wrapper>
                     <PostInfo>
                         <PostInfoItem>
-                            <DateRangeIcon fontSize="small" width="1px" />
+                            <FaCalendar fontSize="small" width="1px" />
                             {stringToDate(post.date)}
                         </PostInfoItem>
 
                         <PostInfoItem>
-                            <PersonIcon fontSize="small" width="1px" />
+                            <FaUser fontSize="small" width="1px" />
                             by {post.author}
                         </PostInfoItem>
                     </PostInfo>

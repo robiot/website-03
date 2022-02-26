@@ -1,5 +1,5 @@
-import DateRangeIcon from "@mui/icons-material/DateRange";
 import Router from "next/router";
+import { FaCalendar } from "react-icons/fa";
 
 import { CutContent, stringToDate } from "../../../lib/utils";
 import { Post_T } from "../../../types/post";
@@ -28,7 +28,7 @@ export const Posts = ({ posts, tag = "" }: { posts: any; tag?: string }) => {
                     }}
                 >
                     <PostDate>
-                        <DateRangeIcon fontSize="small" width="1px" />
+                        <FaCalendar fontSize="small" width="1px" style={{marginTop: 2}} />
                         {stringToDate(post.date)}
                     </PostDate>
 

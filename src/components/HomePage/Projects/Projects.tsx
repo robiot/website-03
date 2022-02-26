@@ -1,5 +1,5 @@
-import GitHub from "@mui/icons-material/GitHub";
 import { useContext } from "react";
+import { FaGithub } from "react-icons/fa";
 
 import { themeCtx, themes } from "../../../pages/_app";
 import { Container, SectionLine } from "../../../style/style";
@@ -54,7 +54,7 @@ const Project = ({
                         Download
                     </DownloadButton>
                     <GithubButton href={github} target="_blank">
-                        <GitHub width="1px" />
+                        <FaGithub />
                     </GithubButton>
                 </ButtonsWrapper>
             </LeftWrapper>

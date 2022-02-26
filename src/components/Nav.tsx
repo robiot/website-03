@@ -1,6 +1,5 @@
-import DarkModeIcon from "@mui/icons-material/DarkMode";
-import LightModeIcon from "@mui/icons-material/LightMode";
-import MenuIcon from "@mui/icons-material/Menu";
+import { FaBars, FaSun, FaMoon } from "react-icons/fa";
+
 import Link from "next/link";
 import Router from "next/router";
 import { useContext, useState } from "react";
@@ -163,11 +162,12 @@ const Nav = () => {
                         </NavItems>
 
                         <MenuIconWrapper>
-                            <MenuIcon
+                            <FaBars
                                 onClick={() => {
                                     setDropdown(!dropdown);
                                 }}
                                 width="1px"
+                                fontSize="1.4rem"
                             />
                         </MenuIconWrapper>
 
@@ -200,11 +200,11 @@ const Nav = () => {
                                     }}
                                 >
                                     {theme == "dark" && (
-                                        <LightModeIcon width="1px" />
+                                        <FaSun width="1px" />
                                     )}
 
                                     {theme == "light" && (
-                                        <DarkModeIcon width="1px" />
+                                        <FaMoon width="1px" />
                                     )}
                                     <div
                                         style={{
@@ -224,9 +224,9 @@ const Nav = () => {
                     setThemeEverywhere();
                 }}
             >
-                {theme == "dark" && <LightModeIcon width="1px" />}
+                {theme == "dark" && <FaSun width="1px" />}
 
-                {theme == "light" && <DarkModeIcon width="1px" />}
+                {theme == "light" && <FaMoon width="1px" />}
             </ThemeSwitcher>
         </Holder>
     );

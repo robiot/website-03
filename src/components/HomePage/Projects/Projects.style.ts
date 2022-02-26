@@ -96,6 +96,7 @@ export const GithubButton = styled.a`
     font-size: 1px;
     transition: all 0.2s ease 0s;
     color: white;
+    font-size: 1.3rem;
     &:hover {
         transform: scale(1.05);
     }

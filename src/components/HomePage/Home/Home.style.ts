@@ -34,6 +34,7 @@ export const LandingIconsWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
     gap: 25px;
+    font-size: 1.5rem;
 `;
 
 export const LandingIcon = styled.a`

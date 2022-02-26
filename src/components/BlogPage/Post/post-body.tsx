@@ -3,16 +3,8 @@ import path from "path";
 import { useContext } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import {
-    a11yDark,
-    atomDark,
-    dark,
     dracula,
     materialLight,
-    nord,
-    prism,
-    solarizedlight,
-    tomorrow,
-    twilight,
 } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 import { themeCtx } from "../../../pages/_app";
