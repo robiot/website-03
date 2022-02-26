@@ -63,12 +63,12 @@ const Post: NextPage = ({ post }: any) => {
                 <Wrapper>
                     <PostInfo>
                         <PostInfoItem>
-                            <FaCalendar fontSize="small" width="1px" />
+                            <FaCalendar fontSize="small" width="1px" style={{marginTop: 2}} />
                             {stringToDate(post.date)}
                         </PostInfoItem>
 
                         <PostInfoItem>
-                            <FaUser fontSize="small" width="1px" />
+                            <FaUser fontSize="small" width="1px" style={{marginTop: 2}} />
                             by {post.author}
                         </PostInfoItem>
                     </PostInfo>
