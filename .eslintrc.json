@@ -1,7 +1,7 @@
 {
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
-        "ecmaVersion": 2021
+        "ecmaVersion": 2022
     },
     "extends": ["plugin:lvksh/recommended"],
     "ignorePatterns": ["!**/*"],
@@ -9,7 +9,8 @@
     "env": {
         "browser": true,
         "node": true,
-        "jasmine": true
+        "jasmine": true,
+        "es2022": true
     },
     "rules": {
         "quotes": ["error", "double"],

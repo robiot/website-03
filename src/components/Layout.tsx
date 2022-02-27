@@ -29,7 +29,7 @@ const Layout = ({
         <Wrapper>
             <Head>
                 <title>{title}</title>
-                <meta charSet="utf-8" />
+                <meta charSet="utf8" />
 
                 {/* Generic */}
                 <meta name="description" content={description} title="Robiot" />

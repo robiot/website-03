@@ -7,7 +7,7 @@ export const MarkdownStyles = styled(ReactMarkdown)`
     }
 
     /* font-family: charter, Georgia, Cambria, "Times New Roman", Times, serif; */
-    
+
     font-family: Roboto, sans-serif;
 
     & p {

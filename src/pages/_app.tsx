@@ -3,7 +3,7 @@ import "nprogress/nprogress.css";
 import type { AppProps } from "next/app";
 import Router from "next/router";
 import NProgress from "nprogress";
-import React, { useLayoutEffect } from "react";
+import React from "react";
 import { createContext, useEffect, useState } from "react";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 
@@ -50,7 +50,13 @@ export const themeCtx = createContext<[themes, React.Dispatch<themes>]>([
 ]);
 
 const App = ({ Component, pageProps }: AppProps) => {
-    const theme = useState<themes>("dark");
+    let savedTheme;
+
+    if (localStorage !== undefined) {
+        savedTheme = (localStorage.getItem("theme") || "dark") as themes;
+    }
+
+    const theme = useState<themes>(savedTheme || "dark");
 
     useEffect(() => {
         // eslint-disable-next-line unicorn/prefer-at

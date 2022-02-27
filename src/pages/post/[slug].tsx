@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Link from "next/link";
-import styled from "styled-components";
 import { FaCalendar, FaUser } from "react-icons/fa";
+import styled from "styled-components";
 
 import { PostBody } from "../../components/BlogPage/Post/post-body";
 import Footer from "../../components/Footer";
@@ -11,7 +11,6 @@ import {
     copyToPublic,
     ensureFolder,
     getAllPosts,
-    getAllPostTags,
     getPostBySlug,
     getPostImagesBySlug,
 } from "../../lib/api";
@@ -63,12 +62,20 @@ const Post: NextPage = ({ post }: any) => {
                 <Wrapper>
                     <PostInfo>
                         <PostInfoItem>
-                            <FaCalendar fontSize="small" width="1px" style={{marginTop: 2}} />
+                            <FaCalendar
+                                fontSize="small"
+                                width="1px"
+                                style={{ marginTop: 2 }}
+                            />
                             {stringToDate(post.date)}
                         </PostInfoItem>
 
                         <PostInfoItem>
-                            <FaUser fontSize="small" width="1px" style={{marginTop: 2}} />
+                            <FaUser
+                                fontSize="small"
+                                width="1px"
+                                style={{ marginTop: 2 }}
+                            />
                             by {post.author}
                         </PostInfoItem>
                     </PostInfo>

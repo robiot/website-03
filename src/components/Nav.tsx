@@ -1,8 +1,7 @@
-import { FaBars, FaSun, FaMoon } from "react-icons/fa";
-
 import Link from "next/link";
 import Router from "next/router";
 import { useContext, useState } from "react";
+import { FaBars, FaMoon, FaSun } from "react-icons/fa";
 import styled from "styled-components";
 
 import { themeCtx as themeContext } from "../pages/_app";
@@ -207,7 +206,9 @@ const Nav = () => {
                                             key={index}
                                             passHref
                                         >
-                                            <DropdownItem>{item.name}</DropdownItem>
+                                            <DropdownItem>
+                                                {item.name}
+                                            </DropdownItem>
                                         </Link>
                                     );
                                 })}
@@ -243,9 +244,6 @@ const Nav = () => {
                         marginLeft: theme == "light" ? "calc(100% - 25px)" : 0,
                     }}
                 />
-                {/* {theme == "dark" && <FaSun width="1px" />}
-
-                {theme == "light" && <FaMoon width="1px" />} */}
             </ThemeSwitcher>
         </Holder>
     );
