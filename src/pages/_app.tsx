@@ -22,6 +22,10 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
     
+    body {
+        overflow-y: scroll;
+    }
+
     html, body {
         scroll-behavior: smooth;
         padding: 0;

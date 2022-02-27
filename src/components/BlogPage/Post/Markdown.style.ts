@@ -11,7 +11,7 @@ export const MarkdownStyles = styled(ReactMarkdown)`
     font-family: Roboto, sans-serif;
 
     & p {
-        font-size: 1.15rem;
+        font-size: 1.2rem;
     }
 
     & ul {
