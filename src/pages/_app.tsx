@@ -44,6 +44,10 @@ const GlobalStyle = createGlobalStyle`
     #nprogress .spinner, #nprogress .spinner-icon {
         display: none;
     }
+
+    #nprogress .bar {
+        background: ${({ theme }) => theme.palette.accent.brighter};
+    }
 `;
 
 export type themes = "light" | "dark";
@@ -54,19 +58,17 @@ export const themeCtx = createContext<[themes, React.Dispatch<themes>]>([
 ]);
 
 const App = ({ Component, pageProps }: AppProps) => {
-    const [isMounted, setIsMounted] = useState(false);
     const theme = useState<themes>("dark");
 
     useEffect(() => {
         theme[1]((localStorage.getItem("theme") || "dark") as themes);
-        setIsMounted(true);
     });
 
     return (
         <themeCtx.Provider value={theme}>
             <ThemeProvider theme={theme[0] == "light" ? LightTheme : DarkTheme}>
                 <GlobalStyle />
-                {isMounted && <Component {...pageProps} />}
+                <Component {...pageProps} />
             </ThemeProvider>
         </themeCtx.Provider>
     );

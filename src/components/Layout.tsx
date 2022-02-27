@@ -1,5 +1,5 @@
 import Head from "next/head";
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 
 import { themeCtx as themeContext } from "../pages/_app";
@@ -24,6 +24,11 @@ const Layout = ({
     particles?: boolean;
 }) => {
     const theme = useContext(themeContext);
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
 
     return (
         <Wrapper>
@@ -56,9 +61,14 @@ const Layout = ({
 
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <Nav />
-            {theme[0] == "dark" && particles && <CustomParticles />}
-            {children}
+
+            {isMounted && (
+                <>
+                    <Nav />
+                    {theme[0] == "dark" && particles && <CustomParticles />}
+                    {children}
+                </>
+            )}
         </Wrapper>
     );
 };
