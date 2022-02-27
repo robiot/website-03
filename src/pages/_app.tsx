@@ -50,24 +50,19 @@ export const themeCtx = createContext<[themes, React.Dispatch<themes>]>([
 ]);
 
 const App = ({ Component, pageProps }: AppProps) => {
-    let savedTheme;
-
-    if (localStorage !== undefined) {
-        savedTheme = (localStorage.getItem("theme") || "dark") as themes;
-    }
-
-    const theme = useState<themes>(savedTheme || "dark");
+    const [isMounted, setIsMounted] = useState(false);
+    const theme = useState<themes>("dark");
 
     useEffect(() => {
-        // eslint-disable-next-line unicorn/prefer-at
         theme[1]((localStorage.getItem("theme") || "dark") as themes);
+        setIsMounted(true);
     });
 
     return (
         <themeCtx.Provider value={theme}>
             <ThemeProvider theme={theme[0] == "light" ? LightTheme : DarkTheme}>
                 <GlobalStyle />
-                <Component {...pageProps} />
+                {isMounted && <Component {...pageProps} />}
             </ThemeProvider>
         </themeCtx.Provider>
     );

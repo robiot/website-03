@@ -1,4 +1,3 @@
-/* eslint-disable quotes */
 import path from "path";
 import { useContext } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -17,7 +16,7 @@ export const PostBody = ({
     content: string;
     slug: string;
 }) => {
-    const [theme, setTheme] = useContext(themeCtx);
+    const [theme, _setTheme] = useContext(themeCtx);
 
     return (
         <MarkdownStyles
@@ -30,6 +29,7 @@ export const PostBody = ({
 
                     return <img src={imgurl} alt={image.alt} />;
                 },
+                // eslint-disable-next-line unused-imports/no-unused-vars
                 code({ node, inline, className, children, ...props }) {
                     const match = /language-(\w+)/.exec(className || "");
 
