@@ -66,8 +66,6 @@ export const PostBody = ({
                             decoratedText,
                             key
                         ) => {
-                            console.log(props.children);
-
                             return (
                                 <a
                                     target="_blank"

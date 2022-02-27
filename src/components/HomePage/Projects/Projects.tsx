@@ -73,15 +73,17 @@ export const Projects = () => {
                 <SectionTitle>Projects</SectionTitle>
                 <ProjectsWrapper>
                     {TheProjects.map((item: ProjectType, index: any) => (
-                        <Project
-                            key={index}
-                            theme={theme}
-                            title={item.title}
-                            description={item.description}
-                            download={item.download}
-                            github={item.github}
-                            image={item.image}
-                        />
+                        <div data-aos="fade-up">
+                            <Project
+                                key={index}
+                                theme={theme}
+                                title={item.title}
+                                description={item.description}
+                                download={item.download}
+                                github={item.github}
+                                image={item.image}
+                            />
+                        </div>
                     ))}
                 </ProjectsWrapper>
             </Container>

@@ -1,5 +1,7 @@
 import "nprogress/nprogress.css";
+import "aos/dist/aos.css";
 
+import AOS from "aos";
 import type { AppProps } from "next/app";
 import Router from "next/router";
 import NProgress from "nprogress";
@@ -62,6 +64,7 @@ const App = ({ Component, pageProps }: AppProps) => {
 
     useEffect(() => {
         theme[1]((localStorage.getItem("theme") || "dark") as themes);
+        AOS.init({ once: true });
     });
 
     return (
