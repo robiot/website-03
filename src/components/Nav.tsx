@@ -51,8 +51,7 @@ const Wrapper = styled.div`
 `;
 
 const NavItems = styled(Wrapper)`
-    height: 100%;
-    @media (max-width: ${({ theme }) => theme.breakpoints.medium}) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
         display: none;
     }
 `;
@@ -81,7 +80,7 @@ const HomeImage = styled.img`
 const MenuIconWrapper = styled.div`
     margin-top: 5px;
     cursor: pointer;
-    @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
+    @media (min-width: ${({ theme }) => theme.breakpoints.large}) {
         display: none;
     }
 `;
@@ -90,32 +89,51 @@ const Dropdown = styled.div`
     background-color: ${({ theme }) => theme.palette.primary[700]};
     top: 60px;
     position: fixed;
-    height: auto;
     padding: 1rem;
-    height: 20rem;
     width: 100%;
     left: 0;
     z-index: 100;
     box-shadow: 0 2px 10px 0px ${({ theme }) => theme.palette.primary[900]};
     display: flex;
     flex-direction: column;
-    @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
+    @media (min-width: ${({ theme }) => theme.breakpoints.large}) {
         display: none;
     }
+`;
+
+const DropdownItem = styled(NavItem)`
+    height: 50px;
 `;
 
 const ThemeSwitcher = styled.div`
     position: absolute;
     right: 0;
-    margin-top: 0.5rem;
     margin-right: 2rem;
+    width: 50px;
+    height: 25px;
+    padding: 0px 0.1rem;
+    background: ${({ theme }) => theme.palette.primary[900]};
+    border: none;
+    border-radius: 25px;
     cursor: pointer;
-    @media (max-width: ${({ theme }) => theme.breakpoints.medium}) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
         display: none;
     }
-    &:hover {
+    /* &:hover {
         color: ${({ theme }) => theme.palette.secondary.default};
-    }
+    } */
+`;
+
+const ThemeThumb = styled.div`
+    background: ${({ theme }) => theme.palette.primary[100]};
+    height: 100%;
+    width: 25px;
+    border: 2px solid ${({ theme }) => theme.palette.primary[900]};
+    position: relative;
+    margin-left: 0.4px;
+    margin-right: 0.4px;
+    border-radius: 25px;
+    transition: all 0.2s linear 0s;
 `;
 
 const Nav = () => {
@@ -173,14 +191,14 @@ const Nav = () => {
 
                         {dropdown && (
                             <Dropdown>
-                                <NavItem
+                                <DropdownItem
                                     onClick={() => {
                                         window.scrollTo(0, 0);
                                         Router.push("/");
                                     }}
                                 >
                                     Home
-                                </NavItem>
+                                </DropdownItem>
 
                                 {NavItemsList.map((item, index) => {
                                     return (
@@ -189,23 +207,19 @@ const Nav = () => {
                                             key={index}
                                             passHref
                                         >
-                                            <NavItem>{item.name}</NavItem>
+                                            <DropdownItem>{item.name}</DropdownItem>
                                         </Link>
                                     );
                                 })}
 
-                                <NavItem
+                                <DropdownItem
                                     onClick={() => {
                                         setThemeEverywhere();
                                     }}
                                 >
-                                    {theme == "dark" && (
-                                        <FaSun width="1px" />
-                                    )}
+                                    {theme == "dark" && <FaSun width="1px" />}
 
-                                    {theme == "light" && (
-                                        <FaMoon width="1px" />
-                                    )}
+                                    {theme == "light" && <FaMoon width="1px" />}
                                     <div
                                         style={{
                                             marginLeft: "10px",
@@ -213,7 +227,7 @@ const Nav = () => {
                                     >
                                         Change theme
                                     </div>
-                                </NavItem>
+                                </DropdownItem>
                             </Dropdown>
                         )}
                     </Wrapper>
@@ -224,9 +238,14 @@ const Nav = () => {
                     setThemeEverywhere();
                 }}
             >
-                {theme == "dark" && <FaSun width="1px" />}
+                <ThemeThumb
+                    style={{
+                        marginLeft: theme == "light" ? "calc(100% - 25px)" : 0,
+                    }}
+                />
+                {/* {theme == "dark" && <FaSun width="1px" />}
 
-                {theme == "light" && <FaMoon width="1px" />}
+                {theme == "light" && <FaMoon width="1px" />} */}
             </ThemeSwitcher>
         </Holder>
     );

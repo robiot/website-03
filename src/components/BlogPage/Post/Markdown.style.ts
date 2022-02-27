@@ -6,8 +6,12 @@ export const MarkdownStyles = styled(ReactMarkdown)`
         word-wrap: break-word;
     }
 
+    /* font-family: charter, Georgia, Cambria, "Times New Roman", Times, serif; */
+    
+    font-family: Roboto, sans-serif;
+
     & p {
-        font-size: 1.1rem;
+        font-size: 1.15rem;
     }
 
     & ul {

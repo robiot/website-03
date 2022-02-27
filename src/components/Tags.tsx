@@ -5,7 +5,6 @@ export const TagsWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    width: 40%;
 `;
 
 export const Tag = styled.div`
@@ -22,6 +21,7 @@ export const Tag = styled.div`
         background-color: ${({ theme }) => theme.palette.secondary.default};
         color: #fff;
     }
+    width: auto;
 `;
 
 const Tags = ({ post }: { post: any }) => {
