@@ -14,16 +14,11 @@ export const PostsWrapper = styled.div`
 export const Post = styled.div`
     display: flex;
     flex-direction: column;
-    background-color: ${({ theme }) => theme.palette.primary[700]};
+    background-color: ${({ theme }) => theme.palette.primary[800]};
     padding: 2rem;
     border-radius: 0.6rem;
     box-shadow: 0 8px 10px -6px ${({ theme }) => theme.palette.primary[900]};
     border-top: 7px solid ${({ theme }) => theme.palette.primary[600]};
-    cursor: pointer;
-
-    &:hover {
-        box-shadow: 0 0 15px -6px ${({ theme }) => theme.palette.primary[300]};
-    }
 `;
 
 export const PostDate = styled.div`
@@ -38,4 +33,10 @@ export const Title = styled.h1`
     font-size: 1.7rem;
     font-weight: 600;
     margin-bottom: 1.3rem;
+    width: fit-content;
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+    }
 `;

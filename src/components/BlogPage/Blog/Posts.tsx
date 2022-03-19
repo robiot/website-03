@@ -16,17 +16,7 @@ export const Posts = ({ posts, tag = "" }: { posts: any; tag?: string }) => {
             )}
 
             {posts.map((post: Post_T, index: any) => (
-                <Post
-                    key={index}
-                    onClick={(click: any) => {
-                        if (click.target.id != "tag") {
-                            // Hacky fix, but it works
-                            Router.push(
-                                `/post/${encodeURIComponent(post.slug)}`
-                            );
-                        }
-                    }}
-                >
+                <Post key={index}>
                     <PostDate>
                         <FaCalendar
                             fontSize="small"
@@ -36,7 +26,15 @@ export const Posts = ({ posts, tag = "" }: { posts: any; tag?: string }) => {
                         {stringToDate(post.date)}
                     </PostDate>
 
-                    <Title>{post.title}</Title>
+                    <Title
+                        onClick={() => {
+                            Router.push(
+                                `/post/${encodeURIComponent(post.slug)}`
+                            );
+                        }}
+                    >
+                        {post.title}
+                    </Title>
                     <Tags post={post} />
                 </Post>
             ))}

@@ -26,7 +26,7 @@ export const Creative = () => {
                     </Tooltip>
                 </SectionTitle>
             </Container>
-            <BiggerContainer data-aos="zoom-in-up">
+            <BiggerContainer>
                 <ItemsWrapper>
                     {Images.map((image, index) => (
                         <ItemDiv
