@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { Container } from "../../../style/style";
+import { Container } from "../../../lib/style";
 
 export const BiggerContainer = styled(Container)`
     max-width: 850px;

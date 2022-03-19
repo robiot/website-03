@@ -1,7 +1,7 @@
 import { useContext } from "react";
 
+import { Container } from "../../../lib/style";
 import { themeCtx, themes } from "../../../pages/_app";
-import { Container } from "../../../style/style";
 import { Languages, Other, Technologies } from "./experience";
 import {
     ExperienceColumn,

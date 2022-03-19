@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { FaGithub } from "react-icons/fa";
 
+import { Container, SectionLine } from "../../../lib/style";
 import { themeCtx, themes } from "../../../pages/_app";
-import { Container, SectionLine } from "../../../style/style";
 import { Section, SectionTitle } from "../Experience/Experience.style";
 import { TheProjects } from "./projects";
 import {

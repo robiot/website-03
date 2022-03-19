@@ -14,8 +14,8 @@ import {
     getPostBySlug,
     getPostImagesBySlug,
 } from "../../lib/api";
+import { Container } from "../../lib/style";
 import { CutContent, stringToDate } from "../../lib/utils";
-import { Container } from "../../style/style";
 
 const Wrapper = styled.div`
     margin-top: 4rem;

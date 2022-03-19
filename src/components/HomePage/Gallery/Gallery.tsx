@@ -1,7 +1,7 @@
 import { useContext } from "react";
 
+import { Container, SectionLine } from "../../../lib/style";
 import { themeCtx } from "../../../pages/_app";
-import { Container, SectionLine } from "../../../style/style";
 import { Section, SectionTitle } from "../Experience/Experience.style";
 import { Images } from "./gallery";
 import {

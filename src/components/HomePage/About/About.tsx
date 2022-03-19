@@ -3,7 +3,7 @@ import {
     Section,
     SectionLine,
     SectionTitle,
-} from "../../../style/style";
+} from "../../../lib/style";
 import { AboutMeText, AboutMeWrapper, MeImage, SectionBg } from "./About.style";
 
 export const About = () => {

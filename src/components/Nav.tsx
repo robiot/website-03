@@ -4,8 +4,8 @@ import { useContext, useState } from "react";
 import { FaBars, FaMoon, FaSun } from "react-icons/fa";
 import styled from "styled-components";
 
+import { Container } from "../lib/style";
 import { themeCtx as themeContext } from "../pages/_app";
-import { Container } from "../style/style";
 
 const NavItemsList = [
     {

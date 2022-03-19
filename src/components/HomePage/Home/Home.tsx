@@ -1,6 +1,6 @@
 import { FaEnvelope, FaGithub, FaTwitter, FaYoutube } from "react-icons/fa";
 
-import { Container } from "../../../style/style";
+import { Container } from "../../../lib/style";
 import {
     BackgroundImage,
     LandingIcon,
@@ -14,6 +14,8 @@ export const Home = () => {
     return (
         <div>
             <BackgroundImage src="/img/rect.svg" height="1px" />
+            {/* <BackgroundImage /> */}
+
             <Container>
                 <LandingWrapper>
                     <Title>Hello, I'm Elliot.</Title>
