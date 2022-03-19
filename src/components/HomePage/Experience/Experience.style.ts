@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+import { Container } from "../../../lib/style";
+
+export const ExperienceContainer = styled(Container)`
+    max-width: 850px;
+`;
+
 export const Section = styled.div`
     margin-top: 5rem;
 `;
@@ -35,6 +41,7 @@ export const ExperienceTitle = styled.h2`
     font-weight: bold;
     font-size: 1.2rem;
     margin-bottom: 0.2rem;
+    text-align: center;
 `;
 
 export const ExperienceItem = styled.div`

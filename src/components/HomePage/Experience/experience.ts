@@ -69,13 +69,10 @@ export const Other = [
         name: "Illustrator",
         image: "illustrator.png",
     },
+
     {
         name: "Git",
         image: "git.png",
-    },
-    {
-        name: "Bash",
-        image: "bash.png",
     },
     {
         name: "Davinci Resolve",
@@ -88,5 +85,9 @@ export const Other = [
     {
         name: "Blender",
         image: "blender.ico",
+    },
+    {
+        name: "Figma",
+        image: "figma.png",
     },
 ];
