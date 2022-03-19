@@ -38,7 +38,7 @@ export const LightTheme: DefaultTheme = {
     palette: {
         primary: {
             100: "#0b0e11",
-            200: "#151a21",
+            200: "#363840",
             300: "#242c37",
             400: "#F1F1F1",
             500: "#adadad",

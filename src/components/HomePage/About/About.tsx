@@ -17,11 +17,10 @@ export const About = () => {
                 <AboutMeWrapper>
                     <AboutMeText>
                         <p>
-                            Hi I'm Elliot (aka Robiot), a self-taught software
-                            developer. I do software development as a hobby and
-                            I really enjoy it. I've been coding seriously since
-                            early 2021, but I've made some small projects
-                            before.
+                            Hi I'm Elliot (aka Robiot), a passionate software
+                            and web developer. I code as a hobby and I really
+                            enjoy it. I've been coding seriously since early
+                            2021, but I've made some small projects before.
                         </p>
                         <p>
                             I upload most of my projects to Github, where some
