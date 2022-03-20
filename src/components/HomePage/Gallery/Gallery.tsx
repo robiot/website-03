@@ -1,8 +1,12 @@
 import { useContext } from "react";
 
-import { Container, SectionLine } from "../../../lib/style";
+import {
+    Container,
+    SectionLine,
+    SubSection,
+    SubSectionTitle,
+} from "../../../lib/style";
 import { themeCtx } from "../../../pages/_app";
-import { Section, SectionTitle } from "../Experience/Experience.style";
 import { Images } from "./gallery";
 import {
     BiggerContainer,
@@ -12,19 +16,19 @@ import {
     Tooltip,
 } from "./Gallery.style";
 
-export const Creative = () => {
+export const Gallery = () => {
     const [theme, _setTheme] = useContext(themeCtx);
 
     return (
-        <Section id="gallery" style={{ scrollMarginTop: "100px" }}>
+        <SubSection id="gallery" style={{ scrollMarginTop: "100px" }}>
             <Container>
                 <SectionLine />
-                <SectionTitle>
+                <SubSectionTitle>
                     Gallery{" "}
                     <Tooltip data-text="All rights reserved for all images">
                         ©
                     </Tooltip>
-                </SectionTitle>
+                </SubSectionTitle>
             </Container>
             <BiggerContainer>
                 <ItemsWrapper>
@@ -47,6 +51,6 @@ export const Creative = () => {
                     ))}
                 </ItemsWrapper>
             </BiggerContainer>
-        </Section>
+        </SubSection>
     );
 };

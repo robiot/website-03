@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const SectionBg = styled.div`
-    left: 0px;
+    left: 0;
     right: 0;
     top: 0;
     bottom: 0;
@@ -9,7 +9,6 @@ export const SectionBg = styled.div`
     background: ${({ theme }) => theme.palette.primary[800]} none repeat scroll
         0% 0%;
     transform: skewY(-3deg);
-    /* z-index: -1; */
     pointer-events: none;
     position: absolute;
 `;
@@ -18,7 +17,8 @@ export const AboutMeWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 2.4rem;
+    margin-top: 2.6rem;
+    margin-bottom: 1rem;
 `;
 
 export const AboutMeText = styled.div`

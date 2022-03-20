@@ -1,7 +1,4 @@
-import { useContext } from "react";
-
-import { Container } from "../../../lib/style";
-import { themeCtx } from "../../../pages/_app";
+import { Container, SubSection, SubSectionTitle } from "../../../lib/style";
 import { Languages, Other, Technologies } from "./experience";
 import {
     ExperienceColumn,
@@ -9,20 +6,13 @@ import {
     ExperienceItem,
     Experiences,
     ExperienceTitle,
-    Section,
-    SectionTitle,
     Separator,
 } from "./Experience.style";
 
 const getItems = (itemtype: { name: string; image: string }[]) => {
-    const [theme, _setTheme] = useContext(themeCtx);
-
     return itemtype.map((item, index) => {
         return (
-            <ExperienceItem
-                key={index}
-                style={{ boxShadow: theme == "light" ? undefined : "none" }}
-            >
+            <ExperienceItem key={index}>
                 <img alt={item.name} src={`/img/experiences/${item.image}`} />
                 {item.name}
             </ExperienceItem>
@@ -32,9 +22,9 @@ const getItems = (itemtype: { name: string; image: string }[]) => {
 
 export const Experience = () => {
     return (
-        <Section>
+        <SubSection>
             <Container>
-                <SectionTitle>Experience</SectionTitle>
+                <SubSectionTitle>Experience</SubSectionTitle>
             </Container>
             <ExperienceContainer>
                 <Experiences>
@@ -58,6 +48,6 @@ export const Experience = () => {
                     </ExperienceColumn>
                 </Experiences>
             </ExperienceContainer>
-        </Section>
+        </SubSection>
     );
 };

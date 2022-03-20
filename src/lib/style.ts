@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const Container = styled.div`
     margin-left: auto;
@@ -39,4 +39,23 @@ export const SectionLine = styled.div`
         )
         repeat scroll 0% 0%;
     margin-bottom: 15px;
+`;
+
+export const SubSection = styled(Section)`
+    margin-top: 2rem;
+`;
+
+export const SubSectionTitle = styled.h1`
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 2.4rem;
+`;
+
+export const slideDownKeyframe = keyframes`
+  0% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 `;

@@ -1,8 +1,22 @@
 import styled from "styled-components";
 
+export const SectionBg = styled.div`
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    background: ${({ theme }) => theme.palette.primary[800]} none repeat scroll
+        0% 0%;
+    /* z-index: -1; */
+    transform: skewY(-2deg);
+    pointer-events: none;
+    position: absolute;
+`;
+
 export const ProjectDiv = styled.div`
     background: ${({ theme }) => theme.palette.primary[800]};
-    box-shadow: ${({ theme }) => theme.palette.primary[700]} 2px 5px 10px 2px;
+    box-shadow: ${({ theme }) => theme.palette.shadow} 0px 5px 10px 3px;
     border-radius: 13px;
     min-height: 300px;
     display: flex;

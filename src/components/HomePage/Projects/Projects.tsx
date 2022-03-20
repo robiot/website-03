@@ -1,9 +1,11 @@
-import { useContext } from "react";
 import { FaGithub } from "react-icons/fa";
 
-import { Container, SectionLine } from "../../../lib/style";
-import { themeCtx, themes } from "../../../pages/_app";
-import { Section, SectionTitle } from "../Experience/Experience.style";
+import {
+    Container,
+    SectionLine,
+    SubSection,
+    SubSectionTitle,
+} from "../../../lib/style";
 import { TheProjects } from "./projects";
 import {
     ButtonsWrapper,
@@ -15,6 +17,7 @@ import {
     ProjectImage,
     ProjectsWrapper,
     ProjectTitle,
+    SectionBg,
 } from "./Projects.style";
 
 type ProjectType = {
@@ -25,68 +28,49 @@ type ProjectType = {
     image: string;
 };
 
-const Project = ({
-    theme,
-    title,
-    description,
-    download,
-    github,
-    image,
-}: {
-    theme: themes;
-    title: string;
-    description: string;
-    download: string;
-    github: string;
-    image: string;
-}) => {
-    return (
-        <ProjectDiv
-            style={{ boxShadow: theme == "light" ? undefined : "none" }} // Hack, but works
-        >
-            <LeftWrapper>
-                <div>
-                    <ProjectTitle>{title}</ProjectTitle>
-                    <ProjectDescription>{description}</ProjectDescription>
-                </div>
-                <ButtonsWrapper>
-                    <DownloadButton href={download} target="_blank">
-                        Download
-                    </DownloadButton>
-                    <GithubButton href={github} target="_blank">
-                        <FaGithub />
-                    </GithubButton>
-                </ButtonsWrapper>
-            </LeftWrapper>
-            <ProjectImage src={`/img/projects/${image}`} />
-        </ProjectDiv>
-    );
-};
-
 export const Projects = () => {
-    const [theme, _setTheme] = useContext(themeCtx);
-
     return (
-        <Section id="projects" style={{ scrollMarginTop: "100px" }}>
+        <SubSection id="projects" style={{ scrollMarginTop: "100px" }}>
+            <SectionBg />
             <Container>
                 <SectionLine />
-                <SectionTitle>Projects</SectionTitle>
+                <SubSectionTitle>Projects</SubSectionTitle>
                 <ProjectsWrapper>
                     {TheProjects.map((item: ProjectType, index: any) => (
-                        <div data-aos="fade-up">
-                            <Project
-                                key={index}
-                                theme={theme}
-                                title={item.title}
-                                description={item.description}
-                                download={item.download}
-                                github={item.github}
-                                image={item.image}
-                            />
+                        <div data-aos="fade-up" key={index}>
+                            <ProjectDiv>
+                                <LeftWrapper>
+                                    <div>
+                                        <ProjectTitle>
+                                            {item.title}
+                                        </ProjectTitle>
+                                        <ProjectDescription>
+                                            {item.description}
+                                        </ProjectDescription>
+                                    </div>
+                                    <ButtonsWrapper>
+                                        <DownloadButton
+                                            href={item.download}
+                                            target="_blank"
+                                        >
+                                            Download
+                                        </DownloadButton>
+                                        <GithubButton
+                                            href={item.github}
+                                            target="_blank"
+                                        >
+                                            <FaGithub />
+                                        </GithubButton>
+                                    </ButtonsWrapper>
+                                </LeftWrapper>
+                                <ProjectImage
+                                    src={`/img/projects/${item.image}`}
+                                />
+                            </ProjectDiv>
                         </div>
                     ))}
                 </ProjectsWrapper>
             </Container>
-        </Section>
+        </SubSection>
     );
 };

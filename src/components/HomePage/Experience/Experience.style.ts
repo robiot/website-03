@@ -6,16 +6,6 @@ export const ExperienceContainer = styled(Container)`
     max-width: 850px;
 `;
 
-export const Section = styled.div`
-    margin-top: 5rem;
-`;
-
-export const SectionTitle = styled.h1`
-    font-weight: bold;
-    font-size: 1.5rem;
-    margin-bottom: 2.4rem;
-`;
-
 export const Experiences = styled.div`
     display: flex;
     align-items: stretch;
@@ -53,7 +43,7 @@ export const ExperienceItem = styled.div`
     padding: 0.6rem;
     align-items: center;
     cursor: pointer;
-    box-shadow: ${({ theme }) => theme.palette.primary[700]} 2px 5px 10px 2px;
+    box-shadow: ${({ theme }) => theme.palette.shadow} 2px 5px 10px 2px;
     &:hover {
         transform: rotate(3deg);
     }

@@ -1,9 +1,12 @@
 import styled from "styled-components";
 
+import { slideDownKeyframe } from "../../../lib/style";
+
 export const LandingWrapper = styled.div`
     margin-top: 16vw;
     z-index: 2;
     position: relative;
+    animation: 0.4s ease 0s 1 ${slideDownKeyframe};
 `;
 
 export const BackgroundImage = styled.img`
