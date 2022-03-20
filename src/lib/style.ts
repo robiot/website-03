@@ -59,3 +59,14 @@ export const slideDownKeyframe = keyframes`
     transform: translateY(0);
   }
 `;
+
+export const slideDownFadeKeyframe = keyframes`
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`;
