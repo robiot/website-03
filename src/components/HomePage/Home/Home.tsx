@@ -19,7 +19,7 @@ export const Home = () => {
             <Container>
                 <LandingWrapper>
                     <Title>Hello, I'm Elliot.</Title>
-                    <SubTitle>A 14 year old Software developer.</SubTitle>
+                    <SubTitle>A 15 year old Software developer.</SubTitle>
                     <LandingIconsWrapper>
                         <LandingIcon
                             href="https://github.com/robiot"
