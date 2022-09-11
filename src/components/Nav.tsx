@@ -55,10 +55,12 @@ const NavItems = styled(Wrapper)`
     }
 `;
 
-const NavItem = styled.div`
+const NavItem = styled.a`
     height: 100%;
     display: flex;
     align-items: center;
+    color: inherit;
+    text-decoration: none;
     border-radius: 0.5rem;
     &:hover {
         color: ${({ theme }) => theme.palette.secondary.default};
