@@ -17,10 +17,10 @@ export const About = () => {
                 <AboutMeWrapper>
                     <AboutMeText>
                         <p>
-                            Hi I'm Elliot (aka Robiot), a passionate software
-                            and web developer. I code as a hobby and I really
-                            enjoy it. I've been coding seriously since early
-                            2021, but I've made some small projects before.
+                            Hi, I'm Elliot (aka Robiot), a passionate software
+                            and web developer. I code as a hobby and I enjoy it
+                            a lot. I've been coding seriously since early 2021,
+                            but I've made some small projects before.
                         </p>
                         <p>
                             I upload most of my projects to Github, where some
@@ -28,7 +28,6 @@ export const About = () => {
                         </p>
                     </AboutMeText>
                     <MeImage src="/img/robot.png" />
-                    {/* <MeImage src="/img/christmas-robot.png" /> */}
                 </AboutMeWrapper>
             </Container>
         </Section>

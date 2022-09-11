@@ -5,7 +5,7 @@
     },
     "extends": ["plugin:lvksh/recommended"],
     "ignorePatterns": ["!**/*"],
-    "plugins": ["lvksh", "react", "react-hooks"],
+    "plugins": ["@next/eslint-plugin-next", "lvksh", "react", "react-hooks"],
     "env": {
         "browser": true,
         "node": true,

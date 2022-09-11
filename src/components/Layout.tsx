@@ -1,10 +1,8 @@
 import Head from "next/head";
-import React, { useContext, useEffect, useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
-import { themeCtx as themeContext } from "../pages/_app";
 import Nav from "./Nav";
-import CustomParticles from "./Particles";
 
 const Wrapper = styled.div`
     display: flex;
@@ -16,20 +14,12 @@ const Layout = ({
     children,
     title,
     description = "Hi, I'm Robiot. I'm a software developer",
-    particles = false,
 }: {
     children: any;
     title: string;
     description?: string;
     particles?: boolean;
 }) => {
-    const theme = useContext(themeContext);
-    const [isMounted, setIsMounted] = useState(false);
-
-    useEffect(() => {
-        setIsMounted(true);
-    }, []);
-
     return (
         <Wrapper>
             <Head>
@@ -62,13 +52,8 @@ const Layout = ({
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            {isMounted && (
-                <>
-                    <Nav />
-                    {theme[0] == "dark" && particles && <CustomParticles />}
-                    {children}
-                </>
-            )}
+            <Nav />
+            {children}
         </Wrapper>
     );
 };
