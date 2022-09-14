@@ -7,7 +7,7 @@ import type { AppContext, AppProps } from "next/app";
 import App from "next/app";
 import Router from "next/router";
 import NProgress from "nprogress";
-import React, { Dispatch } from "react";
+import { Dispatch } from "react";
 import { createContext, useEffect, useState } from "react";
 import { DarkTheme, LightTheme } from "src/lib/theme";
 import { createGlobalStyle, ThemeProvider } from "styled-components";

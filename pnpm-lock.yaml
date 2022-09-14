@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@next/eslint-plugin-next': ^12.0.8
   '@types/aos': ^3.0.4
+  '@types/cookie': ^0.5.1
   '@types/node': 16.11.11
   '@types/nprogress': ^0.2.0
   '@types/react': 18.0.19
@@ -12,6 +13,7 @@ specifiers:
   '@typescript-eslint/parser': ^5.36.2
   aos: ^2.3.4
   babel-plugin-styled-components: ^2.0.2
+  cookie: ^0.5.0
   cookies-next: ^2.1.1
   date-fns: ^2.27.0
   eslint: ^8.10.0
@@ -36,6 +38,7 @@ specifiers:
 
 dependencies:
   aos: 2.3.4
+  cookie: 0.5.0
   cookies-next: 2.1.1
   date-fns: 2.29.2
   gray-matter: 4.0.3
@@ -53,6 +56,7 @@ dependencies:
 devDependencies:
   '@next/eslint-plugin-next': 12.2.5
   '@types/aos': 3.0.4
+  '@types/cookie': 0.5.1
   '@types/node': 16.11.11
   '@types/nprogress': 0.2.0
   '@types/react': 18.0.19
@@ -432,6 +436,10 @@ packages:
   /@types/cookie/0.4.1:
     resolution: {integrity: sha512-XW/Aa8APYr6jSVVA1y/DEIZX0/GMKLEVekNG727R8cs56ahETkRAy/3DR7+fJyh7oUgGwNQaRfXCun0+KbWY7Q==}
     dev: false
+
+  /@types/cookie/0.5.1:
+    resolution: {integrity: sha512-COUnqfB2+ckwXXSFInsFdOAWQzCCx+a5hq2ruyj+Vjund94RJQd4LG2u9hnvJrTgunKAaax7ancBYlDrNYxA0g==}
+    dev: true
 
   /@types/debug/4.1.7:
     resolution: {integrity: sha512-9AonUzyTjXXhEOa0DnqpzZi6VHlqKMswga9EXjpXnnqxwLtdvPPtlO8evrI5D9S6asFRCQ6v+wpiUKbw+vKqyg==}
@@ -900,6 +908,11 @@ packages:
 
   /cookie/0.4.2:
     resolution: {integrity: sha512-aSWTXFzaKWkvHO1Ny/s+ePFpvKsPnjc551iI41v3ny/ow6tBG5Vd+FuqGNhh1LxOmVzOlGUriIlOaokOvhaStA==}
+    engines: {node: '>= 0.6'}
+    dev: false
+
+  /cookie/0.5.0:
+    resolution: {integrity: sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw==}
     engines: {node: '>= 0.6'}
     dev: false
 

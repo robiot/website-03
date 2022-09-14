@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import cookie from "cookie";
 import Link from "next/link";
 import Router from "next/router";
 import { useContext, useState } from "react";
@@ -217,17 +219,19 @@ const Nav = () => {
     const [theme, setTheme] = useContext(themeContext);
 
     const setThemeEverywhere = async () => {
-        const cTheme = theme == "light" ? "dark" : "light";
+        const newTheme = theme == "light" ? "dark" : "light";
 
-        await fetch("/api/setTheme", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                notDefault: theme !== "light",
-            }),
-        });
+        // Disabled since setting it using a library
+        // eslint-disable-next-line unicorn/no-document-cookie
+        document.cookie = cookie.serialize(
+            "not-default-theme",
+            (newTheme == "light").toString(),
+            {
+                maxAge: 2_147_483_647,
+            }
+        );
 
-        setTheme(cTheme);
+        setTheme(newTheme);
     };
 
     return (
@@ -235,24 +239,17 @@ const Nav = () => {
             <Holder>
                 <NavContainer>
                     <Wrapper>
-                        <HomeImage
-                            src="/img/robot.png"
-                            height="1px"
-                            onClick={() => {
-                                window.scrollTo(0, 0);
-                                Router.push("/");
-                            }}
-                        />
+                        <Link href="/" passHref>
+                            <a>
+                                <HomeImage src="/img/robot.png" height="1px" />
+                            </a>
+                        </Link>
+
                         <Wrapper>
                             <NavItems>
-                                <NavItem
-                                    onClick={() => {
-                                        window.scrollTo(0, 0);
-                                        Router.push("/");
-                                    }}
-                                >
-                                    Home
-                                </NavItem>
+                                <Link href="/" passHref>
+                                    <NavItem>Home</NavItem>
+                                </Link>
 
                                 {NavItemsList.map((item, index) => {
                                     return (
@@ -328,6 +325,7 @@ const Nav = () => {
                         {theme == "dark" && <FaSun width="1px" />}
 
                         {theme == "light" && <FaMoon width="1px" />}
+
                         <div
                             style={{
                                 marginLeft: "10px",
