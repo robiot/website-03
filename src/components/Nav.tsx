@@ -216,11 +216,18 @@ const Nav = () => {
     const [dropdown, setDropdown] = useState(false);
     const [theme, setTheme] = useContext(themeContext);
 
-    const setThemeEverywhere = () => {
+    const setThemeEverywhere = async () => {
         const cTheme = theme == "light" ? "dark" : "light";
 
+        await fetch("/api/setTheme", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                notDefault: theme !== "light",
+            }),
+        });
+
         setTheme(cTheme);
-        localStorage.setItem("theme", cTheme);
     };
 
     return (

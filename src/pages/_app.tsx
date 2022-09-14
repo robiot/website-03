@@ -2,18 +2,23 @@ import "nprogress/nprogress.css";
 import "aos/dist/aos.css";
 
 import AOS from "aos";
-import type { AppProps } from "next/app";
+import { getCookie } from "cookies-next";
+import type { AppContext, AppProps } from "next/app";
+import App from "next/app";
 import Router from "next/router";
 import NProgress from "nprogress";
-import React from "react";
+import React, { Dispatch } from "react";
 import { createContext, useEffect, useState } from "react";
+import { DarkTheme, LightTheme } from "src/lib/theme";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
-
-import { DarkTheme, LightTheme } from "../lib/theme";
 
 Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeComplete", () => NProgress.done());
 Router.events.on("routeChangeError", () => NProgress.done());
+
+type PropsType = {
+    theme: themes;
+};
 
 const GlobalStyle = createGlobalStyle`
     :root {
@@ -54,16 +59,15 @@ const GlobalStyle = createGlobalStyle`
 
 export type themes = "light" | "dark";
 
-export const themeCtx = createContext<[themes, React.Dispatch<themes>]>([
+export const themeCtx = createContext<[themes, Dispatch<themes>]>([
     "dark",
     () => {},
 ]);
 
-const App = ({ Component, pageProps }: AppProps) => {
-    const theme = useState<themes>("dark");
+const CustomApp = (properties: AppProps<PropsType> & PropsType) => {
+    const theme = useState<themes>(properties.theme);
 
     useEffect(() => {
-        theme[1]((localStorage.getItem("theme") || "dark") as themes);
         AOS.init({ once: true });
     });
 
@@ -71,10 +75,36 @@ const App = ({ Component, pageProps }: AppProps) => {
         <themeCtx.Provider value={theme}>
             <ThemeProvider theme={theme[0] == "light" ? LightTheme : DarkTheme}>
                 <GlobalStyle />
-                <Component {...pageProps} />
+                <properties.Component {...properties.pageProps} />
             </ThemeProvider>
         </themeCtx.Provider>
     );
 };
 
-export default App;
+const getInitialProps: (_: AppContext) => Promise<PropsType> = async (
+    appContext
+) => {
+    const appProps = (await App.getInitialProps(appContext)) as any;
+
+    let theme: string;
+
+    if (appContext.ctx.req == undefined || appContext.ctx.res == undefined) {
+        theme = "dark";
+    } else {
+        const cookie = getCookie("not-default-theme", {
+            res: appContext.ctx.res,
+            req: appContext.ctx.req,
+        });
+
+        theme = cookie != undefined && cookie ? "light" : "dark";
+    }
+
+    return {
+        ...appProps,
+        theme,
+    };
+};
+
+CustomApp.getInitialProps = getInitialProps;
+
+export default CustomApp;
