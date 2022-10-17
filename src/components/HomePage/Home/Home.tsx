@@ -1,4 +1,4 @@
-import { FaEnvelope, FaGithub, FaTwitter, FaYoutube } from "react-icons/fa";
+import { FaGithub, FaTwitter, FaYoutube } from "react-icons/fa";
 
 import { Container } from "../../../lib/style";
 import {
@@ -38,10 +38,6 @@ export const Home = () => {
                             target="_blank"
                         >
                             <FaYoutube width="1px" />
-                        </LandingIcon>
-
-                        <LandingIcon href="mailto:&#x6d;&#x65;&#x40;&#x72;&#x6f;&#x62;&#x69;&#x6f;&#x74;&#x2e;&#x64;&#x65;&#x76;">
-                            <FaEnvelope width="1px" />
                         </LandingIcon>
                     </LandingIconsWrapper>
                 </LandingWrapper>
